@@ -1,0 +1,3404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lot 1704 | Kulim, Kedah | Property Information</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+
+                    colors: {
+                        navy: {
+                            900: '#0b0f19',
+                            950: '#05070d'
+                        },
+                        brand: {
+                            blue: '#0ea5e9',
+                            emerald: '#10b981',
+                            slate: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f19;
+            color: #f8fafc;
+        }
+        .glass-panel {
+
+            background: rgba(15, 23, 42, 0.78);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.55);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.25s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(14, 165, 233, 0.35);
+            transform: translateY(-2px);
+        }
+        .accent-line {
+            width: 45px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(
+                90deg,
+                #0ea5e9,
+                #10b981
+            );
+        }
+        .leaflet-container {
+            background: #0f172a !important;
+            border-radius: 0.75rem;
+        }
+        .leaflet-popup-content-wrapper,
+        .leaflet-popup-tip {
+            background: #1e293b !important;
+            color: #f8fafc !important;
+        }
+        #three-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+            touch-action: none;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-navy-900 text-slate-100 antialiased">
+<header class="sticky top-0 z-50 glass-panel border-b border-slate-800">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
+
+         <!-- Navigation Brand / Company Logo -->
+<a href="#" class="flex items-center gap-3 group">
+    <!-- Logo Container -->
+    <div class="h-12 px-2.5 py-1 rounded-xl bg-white/95 backdrop-blur-md border border-slate-700/50 flex items-center justify-center shadow-md group-hover:border-brand-blue transition-all">
+        <img 
+            src="images/logo.png" 
+            alt="Aman Hidup Kekal Sdn Bhd Logo" 
+            class="h-full w-auto object-contain"
+        >
+    </div>
+    <!-- Company Name & Subtitle -->
+    <div>
+        <span class="text-base sm:text-lg font-bold text-white tracking-tight block leading-none">
+            AMAN HIDUP KEKAL SDN. BHD.
+        </span>
+        <span class="text-[10px] sm:text-xs font-semibold text-brand-blue uppercase tracking-widest block mt-1">
+            Property Information
+        </span>
+    </div>
+</a>
+            <!-- Desktop Navigation -->
+            <nav
+                class="hidden md:flex items-center gap-1
+                       text-sm font-medium text-slate-300"
+            >
+                <a
+                    href="#overview"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Overview
+                </a>
+                <a
+                    href="#visualization3d"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    3D Model
+                </a>
+                <a
+                    href="#location-map"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Location
+                </a>
+                <a
+                    href="#location-advantages"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Why This Location
+                </a>
+                <a
+                    href="#facilities"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Nearby
+                </a>
+                <a
+                    href="#considerations"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Considerations
+                </a>
+                <a
+                    href="#contact"
+                    class="px-3 py-2 rounded-md
+                           hover:text-brand-blue
+                           hover:bg-slate-800/50 transition"
+                >
+                    Contact
+                </a>
+
+            </nav>
+            <!-- Mobile Button -->
+            <button
+                id="mobile-menu-btn"
+                class="md:hidden p-2
+                       text-slate-300 hover:text-white"
+            >
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden
+               bg-navy-900 border-t border-slate-800
+               px-4 py-3 space-y-1"
+    >
+        <a
+            href="#overview"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Overview
+        </a>
+        <a
+            href="#visualization3d"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            3D Model
+        </a>
+        <a
+            href="#location-map"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Location
+        </a>
+        <a
+            href="#location-advantages"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Why This Location
+        </a>
+        <a
+            href="#facilities"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Nearby Facilities
+        </a>
+        <a
+            href="#considerations"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Property Considerations
+        </a>
+        <a
+            href="#contact"
+            class="block px-3 py-2 rounded hover:bg-slate-800"
+        >
+            Contact
+        </a>
+    </div>
+</header>
+<section
+    class="relative min-h-[88vh]
+           flex items-center justify-center
+           overflow-hidden px-4"
+>
+    <div
+        class="absolute inset-0
+               bg-gradient-to-b
+               from-slate-950
+               via-slate-900
+               to-navy-950"
+    ></div>
+    <div
+        class="absolute top-1/4 left-1/2
+               -translate-x-1/2
+               w-[500px] h-[500px]
+               bg-brand-blue/10
+               rounded-full
+               blur-[140px]"
+    ></div>
+    <div
+        class="absolute inset-0 opacity-30"
+        style="
+            background-image:
+            linear-gradient(to right, #33415520 1px, transparent 1px),
+            linear-gradient(to bottom, #33415520 1px, transparent 1px);
+            background-size: 3.5rem 3.5rem;
+        "
+    ></div>
+    <div
+        class="relative z-10
+               max-w-5xl mx-auto
+               text-center"
+    >
+        <div
+            class="inline-flex items-center gap-2
+                   px-4 py-2 rounded-full
+                   bg-slate-800/70
+                   border border-slate-700
+                   text-xs font-semibold
+                   text-brand-blue"
+        >
+            <span
+                class="w-2 h-2 rounded-full
+                       bg-brand-emerald"
+            ></span>
+            LAND PROPERTY OPPORTUNITY
+            <span class="text-slate-500">
+            </span>
+            <span
+                id="hero-ref"
+                class="text-white font-mono"
+            >
+                LOT-1704-KLM
+            </span>
+        </div>
+
+        <!-- Title -->
+        <h1
+            class="mt-8
+                   text-4xl sm:text-6xl lg:text-7xl
+                   font-black tracking-tight
+                   text-white"
+        >
+            LOT 1704
+            <span
+                class="block
+                       text-transparent
+                       bg-clip-text
+                       bg-gradient-to-r
+                       from-brand-blue
+                       to-brand-emerald"
+            >
+                KULIM, KEDAH
+            </span>
+
+        </h1>
+        <p
+            class="mt-5
+                   text-lg sm:text-xl
+                   text-slate-300
+                   max-w-3xl mx-auto"
+        >
+            A strategically positioned land parcel
+            within an established automotive,
+            retail and commercial environment.
+        </p>
+        <p
+            class="mt-3
+                   text-sm sm:text-base
+                   text-slate-400
+                   max-w-2xl mx-auto"
+        >
+            Presented as a property location reference
+            for automotive businesses evaluating
+            potential sites in Kulim.
+        </p>
+
+        <!-- Quick Information -->
+
+        <div
+            class="mt-10
+                   max-w-3xl mx-auto
+                   grid grid-cols-1
+                   sm:grid-cols-3 gap-4"
+        >
+            <!-- Land Area -->
+            <div
+                class="glass-card
+                       rounded-xl p-5"
+            >
+                <i
+                    class="fa-solid fa-ruler-combined
+                           text-brand-blue text-xl"
+                ></i>
+                <p
+                    class="text-xs text-slate-400
+                           uppercase tracking-wider mt-3"
+                >
+                    Land Area
+                </p>
+                <p
+                    id="hero-stat-size"
+                    class="text-xl font-bold
+                           text-white mt-1"
+                >
+                    3,335 m²
+                </p>
+            </div>
+
+            <!-- Automotive Environment -->
+            <div
+                class="glass-card
+                       rounded-xl p-5"
+            >
+                <i
+                    class="fa-solid fa-car-side
+                           text-brand-emerald text-xl"
+                ></i>
+                <p
+                    class="text-xs text-slate-400
+                           uppercase tracking-wider mt-3"
+                >
+                    Nearby Automotive Reference
+                </p>
+                <p
+                    class="text-xl font-bold
+                           text-white mt-1"
+                >
+                    Toyota Showroom
+                </p>
+            </div>
+
+            <!-- Lot -->
+
+            <div
+                class="glass-card
+                       rounded-xl p-5"
+            >
+                <i
+                    class="fa-solid fa-map
+                           text-slate-300 text-xl"
+                ></i>
+                <p
+                    class="text-xs text-slate-400
+                           uppercase tracking-wider mt-3"
+                >
+                    Property Reference
+                </p>
+                <p
+                    class="text-xl font-bold
+                           text-white mt-1"
+                >
+                    Lot 1704
+                </p>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div
+            class="mt-10
+                   flex flex-wrap
+                   justify-center gap-4"
+        >
+            <a
+                href="#location-advantages"
+                class="px-7 py-3.5
+                       rounded-xl
+                       bg-brand-blue
+                       hover:bg-cyan-500
+                       text-white font-bold
+                       shadow-lg transition"
+            >
+                <i class="fa-solid fa-location-dot mr-2"></i>
+                Explore Location
+            </a>
+            <a
+                href="#location-map"
+                class="px-7 py-3.5
+                       rounded-xl
+                       bg-slate-800
+                       hover:bg-slate-700
+                       border border-slate-700
+                       text-white font-semibold
+                       transition"
+            >
+                <i class="fa-solid fa-map-location-dot mr-2"></i>
+                View Map
+            </a>
+        </div>
+    </div>
+</section>
+
+<section
+    id="overview"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+    <div class="text-center mb-12">
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-blue uppercase"
+        >
+            Property Overview
+        </span>
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Key Property Information
+        </h2>
+        <p
+            class="text-slate-400
+                   max-w-2xl mx-auto mt-3"
+        >
+            Basic information about Lot 1704 for
+            preliminary property and location evaluation.
+        </p>
+    </div>
+    <div
+        class="grid grid-cols-1
+               md:grid-cols-2
+               lg:grid-cols-3 gap-6"
+    >
+        <!-- Land Area -->
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+            <i
+                class="fa-solid fa-ruler-combined
+                       text-brand-blue text-2xl"
+            ></i>
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Total Land Area
+            </p>
+            <h3
+                id="card-size"
+                class="text-2xl font-black
+                       text-white mt-1"
+            >
+                3,335 m²
+            </h3>
+            <p
+                id="card-size-metric"
+                class="text-sm text-brand-blue mt-1"
+            >
+                ~0.824 Acres / 35,897 sq.ft.
+            </p>
+        </div>
+
+        <!-- Location -->
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+            <i
+                class="fa-solid fa-location-dot
+                       text-brand-emerald text-2xl"
+            ></i>
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Location
+            </p>
+            <h3
+                id="card-location"
+                class="text-2xl font-black
+                       text-white mt-1"
+            >
+                Kulim, Kedah
+            </h3>
+            <p
+                id="card-district"
+                class="text-sm text-slate-400 mt-1"
+            >
+                Mukim Kulim, District of Kulim
+            </p>
+        </div>
+
+        <!-- Lot -->
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-file-lines
+                       text-slate-300 text-2xl"
+            ></i>
+
+
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Lot Reference
+            </p>
+
+
+            <h3
+                class="text-2xl font-black
+                       text-white mt-1"
+            >
+                Lot 1704
+            </h3>
+
+
+            <p
+                class="text-sm text-slate-400 mt-1"
+            >
+                Property identification
+            </p>
+
+        </div>
+
+
+
+        <!-- Land Type -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-layer-group
+                       text-brand-blue text-2xl"
+            ></i>
+
+
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Property Type
+            </p>
+
+
+            <h3
+                id="card-land-type"
+                class="text-xl font-bold
+                       text-white mt-1"
+            >
+                Land Parcel
+            </h3>
+
+
+            <p
+                class="text-sm text-slate-400 mt-1"
+            >
+                Preliminary property reference
+            </p>
+
+        </div>
+
+
+
+        <!-- Coordinates -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-crosshairs
+                       text-brand-emerald text-2xl"
+            ></i>
+
+
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Site Coordinates
+            </p>
+
+
+            <h3
+                class="text-lg font-bold
+                       text-white mt-1"
+            >
+                5.354963, 100.530238
+            </h3>
+
+
+            <p
+                class="text-sm text-slate-400 mt-1"
+            >
+                Approximate site reference point
+            </p>
+
+        </div>
+
+
+
+        <!-- Information Status -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-circle-info
+                       text-slate-300 text-2xl"
+            ></i>
+
+
+            <p
+                class="text-xs text-slate-400
+                       uppercase tracking-wider mt-5"
+            >
+                Information Status
+            </p>
+
+
+            <h3
+                class="text-xl font-bold
+                       text-white mt-1"
+            >
+                Preliminary Reference
+            </h3>
+
+
+            <p
+                class="text-sm text-slate-400 mt-1"
+            >
+                Property particulars should be verified
+                against official documents and site records.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!---3D Model-->
+<section
+    id="visualization3d"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+
+
+    <div class="mb-8">
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-emerald uppercase"
+        >
+            Interactive Visualization
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            3D Land Model
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   mt-2 max-w-3xl"
+        >
+            A simplified visual representation of the
+            approximate land area of Lot 1704.
+            It is provided to help visitors understand
+            the scale and general property context.
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="relative
+               h-[500px] sm:h-[600px]
+               rounded-2xl
+               overflow-hidden
+               glass-panel"
+    >
+
+
+        <div
+            id="three-container"
+            class="w-full h-full cursor-grab"
+        ></div>
+
+
+
+        <!-- Top Information -->
+
+        <div
+            class="absolute top-4 left-4
+                   glass-card
+                   rounded-xl
+                   px-4 py-3"
+        >
+
+            <p
+                class="text-xs font-bold
+                       text-white"
+            >
+                LOT 1704
+            </p>
+
+
+            <p
+                id="boundary-coords-label"
+                class="text-[11px]
+                       text-slate-400 mt-1"
+            >
+                Illustrative land representation
+            </p>
+
+        </div>
+
+
+
+        <!-- Controls -->
+
+        <div
+            class="absolute top-4 right-4
+                   flex gap-2"
+        >
+
+            <button
+                id="btn-reset-view"
+                class="px-3 py-2
+                       rounded-lg
+                       bg-slate-900/80
+                       border border-slate-700
+                       text-xs text-white
+                       hover:bg-slate-800"
+            >
+
+                <i
+                    class="fa-solid
+                           fa-arrows-rotate mr-1"
+                ></i>
+
+                Reset
+
+            </button>
+
+        </div>
+
+
+
+        <!-- Disclaimer -->
+
+        <div
+            class="absolute
+                   bottom-4 left-4
+                   glass-panel
+                   rounded-xl
+                   px-4 py-3"
+        >
+
+            <p
+                class="text-[11px]
+                       text-slate-300"
+            >
+
+                <i
+                    class="fa-solid
+                           fa-circle-info
+                           text-brand-blue mr-1"
+                ></i>
+
+                Illustrative visualisation only —
+                not a cadastral survey.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Instructions -->
+
+        <div
+            class="absolute
+                   bottom-4
+                   left-1/2
+                   -translate-x-1/2
+                   glass-panel
+                   rounded-full
+                   px-5 py-2
+                   text-xs text-slate-300
+                   whitespace-nowrap"
+        >
+
+            <i
+                class="fa-solid
+                       fa-hand-pointer
+                       text-brand-blue mr-1"
+            ></i>
+
+            Drag to rotate • Scroll to zoom • Right-click to pan
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOCATION MAP
+========================================================= -->
+
+<section
+    id="location-map"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+
+
+    <div class="text-center mb-10">
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-blue uppercase"
+        >
+            Location
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Location & Surrounding Context
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   max-w-2xl mx-auto mt-3"
+        >
+            Explore the approximate location of Lot 1704
+            and its surrounding automotive, retail and
+            commercial environment.
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="glass-panel
+               p-4 rounded-2xl"
+    >
+
+        <div
+            id="leaflet-map"
+            class="w-full
+                   h-[450px] sm:h-[550px]
+                   rounded-xl"
+        ></div>
+
+
+        <div
+            class="mt-4
+                   flex flex-col
+                   sm:flex-row
+                   justify-between
+                   gap-3"
+        >
+
+            <div
+                class="text-xs text-slate-500"
+            >
+                Map data © OpenStreetMap contributors.
+            </div>
+
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs
+                       text-brand-blue
+                       hover:text-cyan-300"
+            >
+
+                <i
+                    class="fa-solid
+                           fa-arrow-up-right-from-square mr-1"
+                ></i>
+
+                Open Location in Google Maps
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOCATION ADVANTAGES
+========================================================= -->
+
+<section
+    id="location-advantages"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+
+
+    <div class="text-center mb-12">
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-emerald uppercase"
+        >
+            Automotive Location Context
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Why This Location?
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   max-w-3xl mx-auto mt-3"
+        >
+            Lot 1704 is surrounded by established
+            automotive, retail, fuel and food-related
+            activities, creating a practical location
+            context for an automotive business to evaluate.
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="grid grid-cols-1
+               md:grid-cols-2
+               gap-6"
+    >
+
+
+        <!-- Automotive Presence -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-7"
+        >
+
+            <div
+                class="w-12 h-12
+                       rounded-xl
+                       bg-brand-blue/10
+                       flex items-center
+                       justify-center
+                       text-brand-blue
+                       text-xl"
+            >
+
+                <i class="fa-solid fa-car-side"></i>
+
+            </div>
+
+
+            <h3
+                class="text-xl
+                       font-bold
+                       text-white mt-5"
+            >
+                Direct Automotive Environment
+            </h3>
+
+
+            <div class="accent-line mt-3"></div>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-4 leading-relaxed"
+            >
+                A Toyota showroom is located directly
+                opposite the property. This places
+                Lot 1704 within an established automotive
+                environment rather than an isolated site.
+            </p>
+
+
+            <p
+                class="text-xs
+                       text-slate-500
+                       mt-3"
+            >
+                This surrounding automotive presence may
+                be relevant when evaluating the suitability
+                of the location for an automotive business.
+            </p>
+
+        </div>
+
+
+
+        <!-- Petrol Station -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-7"
+        >
+
+            <div
+                class="w-12 h-12
+                       rounded-xl
+                       bg-brand-emerald/10
+                       flex items-center
+                       justify-center
+                       text-brand-emerald
+                       text-xl"
+            >
+
+                <i class="fa-solid fa-gas-pump"></i>
+
+            </div>
+
+
+            <h3
+                class="text-xl
+                       font-bold
+                       text-white mt-5"
+            >
+                Petrol Station Nearby
+            </h3>
+
+
+            <div class="accent-line mt-3"></div>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-4 leading-relaxed"
+            >
+                A Petron petrol station is located
+                approximately 236 metres from Lot 1704,
+                providing convenient refuelling access
+                within the surrounding area.
+            </p>
+
+
+            <p
+                class="text-xs
+                       text-slate-500
+                       mt-3"
+            >
+                Distance is an approximate straight-line
+                reference based on the available coordinates.
+            </p>
+
+        </div>
+
+
+
+        <!-- Lotus -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-7"
+        >
+
+            <div
+                class="w-12 h-12
+                       rounded-xl
+                       bg-purple-500/10
+                       flex items-center
+                       justify-center
+                       text-purple-400
+                       text-xl"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+            </div>
+
+
+            <h3
+                class="text-xl
+                       font-bold
+                       text-white mt-5"
+            >
+                Lotus's & Retail Convenience
+            </h3>
+
+
+            <div class="accent-line mt-3"></div>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-4 leading-relaxed"
+            >
+                Lotus's Kulim is approximately 911 metres
+                from Lot 1704, providing access to an
+                established retail and everyday shopping
+                destination within the wider area.
+            </p>
+
+
+            <p
+                class="text-xs
+                       text-slate-500
+                       mt-3"
+            >
+                Lotus's Kulim is officially listed at
+                No. 386, Jalan Lembah Impiana 9,
+                Lembah Impiana 3, Kulim.
+            </p>
+
+        </div>
+
+
+
+        <!-- Food -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-7"
+        >
+
+            <div
+                class="w-12 h-12
+                       rounded-xl
+                       bg-orange-500/10
+                       flex items-center
+                       justify-center
+                       text-orange-400
+                       text-xl"
+            >
+
+                <i class="fa-solid fa-utensils"></i>
+
+            </div>
+
+
+            <h3
+                class="text-xl
+                       font-bold
+                       text-white mt-5"
+            >
+                Food & Beverage Nearby
+            </h3>
+
+
+            <div class="accent-line mt-3"></div>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-4 leading-relaxed"
+            >
+                Food and beverage outlets are located
+                approximately 72 metres from Lot 1704,
+                providing convenient dining options
+                within the immediate surrounding area.
+            </p>
+
+
+            <p
+                class="text-xs
+                       text-slate-500
+                       mt-3"
+            >
+                Distance is an approximate straight-line
+                reference based on the available coordinates.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Automotive Customer Perspective -->
+
+    <div
+        class="mt-8
+               rounded-2xl
+               border border-brand-blue/20
+               bg-brand-blue/5
+               p-6"
+    >
+
+        <div
+            class="flex flex-col
+                   md:flex-row
+                   gap-5
+                   items-start"
+        >
+
+            <div
+                class="w-11 h-11
+                       rounded-xl
+                       bg-brand-blue/10
+                       flex items-center
+                       justify-center
+                       text-brand-blue
+                       shrink-0"
+            >
+
+                <i
+                    class="fa-solid
+                           fa-car"
+                ></i>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    class="font-bold
+                           text-white"
+                >
+                    Automotive Location Advantage
+                </h3>
+
+
+                <p
+                    class="text-sm
+                           text-slate-400
+                           mt-2 leading-relaxed"
+                >
+                    The key advantage of Lot 1704 is its
+                    surrounding environment: an established
+                    Toyota showroom is directly opposite,
+                    a petrol station is nearby, food outlets
+                    are approximately 72 metres away, and
+                    Lotus's Kulim is approximately 911 metres
+                    away. Together, these surrounding
+                    destinations provide useful context for
+                    an automotive company assessing the site.
+                </p>
+
+
+                <p
+                    class="text-xs
+                           text-slate-500
+                           mt-3"
+                >
+                    These points describe the existing
+                    surrounding environment only and do not
+                    represent a proposed development or
+                    confirmed business arrangement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NEARBY FACILITIES
+========================================================= -->
+
+<section
+    id="facilities"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+
+
+    <div class="text-center mb-10">
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-blue uppercase"
+        >
+            Surrounding Area
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Nearby Facilities & Points of Interest
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   max-w-2xl mx-auto mt-3"
+        >
+            Selected nearby businesses, destinations and
+            infrastructure relevant to understanding the
+            surrounding location.
+        </p>
+
+    </div>
+
+
+
+    <!-- Filters -->
+
+    <div
+        id="facility-filters"
+        class="flex flex-wrap
+               justify-center gap-2 mb-8"
+    >
+
+        <button
+            data-filter="all"
+            class="filter-btn active
+                   px-4 py-2 rounded-lg
+                   bg-brand-blue
+                   text-white
+                   text-sm font-semibold"
+        >
+            All
+        </button>
+
+
+        <button
+            data-filter="automotive"
+            class="filter-btn
+                   px-4 py-2 rounded-lg
+                   bg-slate-800
+                   text-slate-300
+                   text-sm font-semibold"
+        >
+            Automotive
+        </button>
+
+
+        <button
+            data-filter="retail"
+            class="filter-btn
+                   px-4 py-2 rounded-lg
+                   bg-slate-800
+                   text-slate-300
+                   text-sm font-semibold"
+        >
+            Retail
+        </button>
+
+
+        <button
+            data-filter="transport"
+            class="filter-btn
+                   px-4 py-2 rounded-lg
+                   bg-slate-800
+                   text-slate-300
+                   text-sm font-semibold"
+        >
+            Transport
+        </button>
+
+
+        <button
+            data-filter="food"
+            class="filter-btn
+                   px-4 py-2 rounded-lg
+                   bg-slate-800
+                   text-slate-300
+                   text-sm font-semibold"
+        >
+            Food & Beverage
+        </button>
+
+
+        <button
+            data-filter="commercial"
+            class="filter-btn
+                   px-4 py-2 rounded-lg
+                   bg-slate-800
+                   text-slate-300
+                   text-sm font-semibold"
+        >
+            Commercial
+        </button>
+
+    </div>
+
+
+
+    <!-- Facilities -->
+
+    <div
+        id="facility-grid"
+        class="grid grid-cols-1
+               sm:grid-cols-2
+               lg:grid-cols-3
+               gap-6"
+    ></div>
+
+
+
+    <!-- Note -->
+
+    <div
+        class="mt-8
+               text-center
+               text-xs text-slate-500"
+    >
+
+        <i
+            class="fa-solid
+                   fa-circle-info
+                   text-brand-blue mr-1"
+        ></i>
+
+        Distances are approximate reference distances.
+        Road, walking and actual access distances may differ.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROPERTY CONSIDERATIONS
+========================================================= -->
+
+<section
+    id="considerations"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           max-w-7xl mx-auto
+           border-t border-slate-800"
+>
+
+
+    <div class="text-center mb-12">
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-emerald uppercase"
+        >
+            Property Evaluation
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Information to Review
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   max-w-2xl mx-auto mt-3"
+        >
+            Important property information that should be
+            reviewed before making any commercial decision.
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="grid grid-cols-1
+               md:grid-cols-2
+               lg:grid-cols-4
+               gap-5"
+    >
+
+
+        <!-- Title -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-file-signature
+                       text-brand-blue text-2xl"
+            ></i>
+
+
+            <h3
+                class="text-lg
+                       font-bold
+                       text-white mt-5"
+            >
+                Land Title
+            </h3>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-2"
+            >
+                Ownership, title conditions and
+                registered land particulars should
+                be reviewed.
+            </p>
+
+        </div>
+
+
+
+        <!-- Boundary -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-draw-polygon
+                       text-brand-emerald text-2xl"
+            ></i>
+
+
+            <h3
+                class="text-lg
+                       font-bold
+                       text-white mt-5"
+            >
+                Site Boundary
+            </h3>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-2"
+            >
+                Exact cadastral boundary and site
+                dimensions should be confirmed.
+            </p>
+
+        </div>
+
+
+
+        <!-- Access -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-road
+                       text-yellow-400 text-2xl"
+            ></i>
+
+
+            <h3
+                class="text-lg
+                       font-bold
+                       text-white mt-5"
+            >
+                Road Access
+            </h3>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-2"
+            >
+                Vehicle access, entrance position,
+                road frontage and traffic movement
+                should be assessed.
+            </p>
+
+        </div>
+
+
+
+        <!-- Planning -->
+
+        <div
+            class="glass-card
+                   rounded-2xl p-6"
+        >
+
+            <i
+                class="fa-solid fa-building-circle-check
+                       text-purple-400 text-2xl"
+            ></i>
+
+
+            <h3
+                class="text-lg
+                       font-bold
+                       text-white mt-5"
+            >
+                Planning Requirements
+            </h3>
+
+
+            <p
+                class="text-sm
+                       text-slate-400
+                       mt-2"
+            >
+                Applicable planning, land-use and
+                authority requirements should be verified.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Disclaimer -->
+
+    <div
+        class="mt-8
+               p-5 rounded-xl
+               bg-slate-800/50
+               border border-slate-700
+               text-center
+               text-xs text-slate-400"
+    >
+
+        <i
+            class="fa-solid
+                   fa-circle-info
+                   text-brand-blue mr-1"
+        ></i>
+
+        This website provides preliminary property
+        information for discussion and evaluation only.
+        It does not constitute a legal, planning,
+        architectural, cadastral or commercial commitment.
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contact"
+    class="py-20 px-4 sm:px-6 lg:px-8
+           border-t border-slate-800"
+>
+
+
+    <div
+        class="max-w-4xl mx-auto
+               text-center"
+    >
+
+        <span
+            class="text-xs font-bold
+                   tracking-widest
+                   text-brand-blue uppercase"
+        >
+            Further Information
+        </span>
+
+
+        <h2
+            class="text-3xl sm:text-4xl
+                   font-extrabold
+                   text-white mt-2"
+        >
+            Interested in Lot 1704?
+        </h2>
+
+
+        <p
+            class="text-slate-400
+                   max-w-2xl mx-auto mt-4"
+        >
+            For further property information,
+            site viewing, title information or
+            commercial discussion, please contact
+            Aman Hidup Kekal Sdn.Bhd.
+        </p>
+
+
+
+        <div class="mt-8">
+
+            <div
+                class="glass-card
+                       rounded-2xl p-8"
+            >
+
+                <i
+                    class="fa-solid fa-building
+                           text-brand-blue text-3xl"
+                ></i>
+
+
+                <h3
+                    class="text-xl
+                           font-bold
+                           text-white mt-4"
+                >
+                    AMAN HIDUP KEKAL SDN.BHD.
+                </h3>
+
+
+                <p
+                    class="text-sm
+                           text-slate-400 mt-2"
+                >
+                    Property Information & Customer Enquiries
+                </p>
+
+
+                <p
+                    class="text-xs
+                           text-slate-500 mt-4"
+                >
+                    Official contact details can be added
+                    once confirmed by the company.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+    class="bg-navy-950
+           border-t border-slate-800
+           py-8 px-4"
+>
+
+    <div
+        class="max-w-7xl mx-auto
+               text-center
+               text-xs text-slate-500"
+    >
+
+        <p>
+            © 2026 Aman Hidup Kekal Sdn.Bhd.
+        </p>
+
+
+        <p class="mt-1">
+            Interactive Property Information Web Application
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   PROPERTY DATA
+========================================================= */
+
+const propertyData = {
+
+    refNumber: "LOT-1704-KLM",
+
+    lotNumber: "Lot 1704",
+
+    name: "Lot 1704",
+
+    location: "Kulim, Kedah",
+
+    districtFull:
+        "Mukim Kulim, District of Kulim, Kedah Darul Aman",
+
+    landSize: "3,335 m²",
+
+    landSizeMetric:
+        "~0.824 Acres / 35,897 sq.ft.",
+
+    landType: "Land Parcel",
+
+    mapCoords: [
+        5.354963,
+        100.530238
+    ]
+
+};
+
+
+
+/* =========================================================
+   NEARBY FACILITIES DATA
+
+   Distances are approximate straight-line
+   reference distances based on available coordinates.
+========================================================= */
+
+const facilitiesData = [
+
+    {
+        name: "Toyota Showroom",
+        category: "automotive",
+        icon: "fa-car",
+        distance: "Opposite the property",
+        color: "text-brand-blue"
+    },
+
+
+    {
+        name: "Petron",
+        category: "transport",
+        icon: "fa-gas-pump",
+        distance: "Approx. 236 m",
+        color: "text-yellow-400"
+    },
+
+
+    {
+        name: "Lotus's Kulim",
+        category: "retail",
+        icon: "fa-cart-shopping",
+        distance: "Approx. 911 m",
+        color: "text-purple-400"
+    },
+
+
+    {
+        name: "Restaurants & Food Outlets",
+        category: "food",
+        icon: "fa-utensils",
+        distance: "Approx. 72 m",
+        color: "text-orange-400"
+    },
+
+
+    {
+        name: "Kulim Town Centre",
+        category: "commercial",
+        icon: "fa-building-columns",
+        distance: "Nearby",
+        color: "text-brand-emerald"
+    },
+
+
+    {
+        name: "Butterworth-Kulim Expressway",
+        category: "transport",
+        icon: "fa-road",
+        distance: "Accessibility reference",
+        color: "text-yellow-400"
+    },
+
+
+    {
+        name: "Kulim Hi-Tech Park",
+        category: "commercial",
+        icon: "fa-industry",
+        distance: "Surrounding area",
+        color: "text-cyan-400"
+    },
+
+
+    {
+        name: "Hospital Kulim",
+        category: "commercial",
+        icon: "fa-hospital",
+        distance: "Surrounding area",
+        color: "text-brand-emerald"
+    },
+
+
+    {
+        name: "Politeknik Tuanku Sultanah Bahiyah",
+        category: "commercial",
+        icon: "fa-graduation-cap",
+        distance: "Surrounding area",
+        color: "text-cyan-400"
+    }
+
+];
+
+
+
+/* =========================================================
+   PAGE INITIALIZATION
+========================================================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+
+        /* Hero */
+
+        document.getElementById(
+            "hero-ref"
+        ).innerText =
+            propertyData.refNumber;
+
+
+        document.getElementById(
+            "hero-stat-size"
+        ).innerText =
+            propertyData.landSize;
+
+
+
+        /* Overview */
+
+        document.getElementById(
+            "card-size"
+        ).innerText =
+            propertyData.landSize;
+
+
+        document.getElementById(
+            "card-size-metric"
+        ).innerText =
+            propertyData.landSizeMetric;
+
+
+        document.getElementById(
+            "card-location"
+        ).innerText =
+            propertyData.location;
+
+
+        document.getElementById(
+            "card-district"
+        ).innerText =
+            propertyData.districtFull;
+
+
+        document.getElementById(
+            "card-land-type"
+        ).innerText =
+            propertyData.landType;
+
+
+
+        /* 3D */
+
+        document.getElementById(
+            "boundary-coords-label"
+        ).innerText =
+            "Illustrative representation — not a cadastral boundary";
+
+
+
+        /* Initialize */
+
+        init3DVisualization();
+
+        initLeafletMap();
+
+        renderFacilities("all");
+
+        setupFilterEvents();
+
+        setupMobileMenu();
+
+    }
+);
+
+
+
+/* =========================================================
+   THREE.JS VARIABLES
+========================================================= */
+
+let scene;
+
+let camera;
+
+let renderer;
+
+let controls;
+
+let siteGroup;
+
+
+
+/* =========================================================
+   INITIALIZE 3D
+========================================================= */
+
+function init3DVisualization() {
+
+    const container =
+        document.getElementById(
+            "three-container"
+        );
+
+
+    if (!container) return;
+
+
+
+    /* -----------------------------------------------------
+       Scene
+    ----------------------------------------------------- */
+
+    scene =
+        new THREE.Scene();
+
+
+    scene.background =
+        new THREE.Color(
+            0x0f172a
+        );
+
+
+
+    /* -----------------------------------------------------
+       Camera
+    ----------------------------------------------------- */
+
+    camera =
+        new THREE.PerspectiveCamera(
+
+            45,
+
+            container.clientWidth /
+            container.clientHeight,
+
+            0.1,
+
+            1000
+
+        );
+
+
+    camera.position.set(
+        85,
+        75,
+        95
+    );
+
+
+
+    /* -----------------------------------------------------
+       Renderer
+    ----------------------------------------------------- */
+
+    renderer =
+        new THREE.WebGLRenderer({
+
+            antialias: true
+
+        });
+
+
+    renderer.setSize(
+
+        container.clientWidth,
+
+        container.clientHeight
+
+    );
+
+
+    renderer.setPixelRatio(
+
+        Math.min(
+            window.devicePixelRatio,
+            2
+        )
+
+    );
+
+
+    renderer.shadowMap.enabled =
+        true;
+
+
+    renderer.shadowMap.type =
+        THREE.PCFSoftShadowMap;
+
+
+    container.appendChild(
+        renderer.domElement
+    );
+
+
+
+    /* -----------------------------------------------------
+       Orbit Controls
+    ----------------------------------------------------- */
+
+    controls =
+        new THREE.OrbitControls(
+
+            camera,
+
+            renderer.domElement
+
+        );
+
+
+    controls.enableDamping =
+        true;
+
+
+    controls.dampingFactor =
+        0.05;
+
+
+    controls.maxPolarAngle =
+        Math.PI / 2.05;
+
+
+    controls.minDistance =
+        45;
+
+
+    controls.maxDistance =
+        220;
+
+
+    controls.target.set(
+        0,
+        0,
+        0
+    );
+
+
+    controls.update();
+
+
+
+    /* -----------------------------------------------------
+       Lighting
+    ----------------------------------------------------- */
+
+    const ambientLight =
+        new THREE.AmbientLight(
+            0xffffff,
+            0.75
+        );
+
+
+    scene.add(
+        ambientLight
+    );
+
+
+    const directionalLight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            1
+        );
+
+
+    directionalLight.position.set(
+        80,
+        120,
+        70
+    );
+
+
+    directionalLight.castShadow =
+        true;
+
+
+    scene.add(
+        directionalLight
+    );
+
+
+
+    /* -----------------------------------------------------
+       Ground Grid
+    ----------------------------------------------------- */
+
+    const grid =
+        new THREE.GridHelper(
+            260,
+            26,
+            0x1e293b,
+            0x1e293b
+        );
+
+
+    grid.position.y =
+        -0.15;
+
+
+    scene.add(
+        grid
+    );
+
+
+
+    /* -----------------------------------------------------
+       Site Group
+    ----------------------------------------------------- */
+
+    siteGroup =
+        new THREE.Group();
+
+
+    scene.add(
+        siteGroup
+    );
+
+
+
+    /* -----------------------------------------------------
+       Conceptual Footprint
+
+       50m x 66.7m ≈ 3,335m²
+
+       IMPORTANT:
+       This is ONLY an illustrative footprint.
+       It is NOT the actual cadastral shape.
+    ----------------------------------------------------- */
+
+    const siteWidth = 50;
+
+    const siteDepth = 66.7;
+
+
+
+    /* Site Base */
+
+    const siteGeometry =
+        new THREE.BoxGeometry(
+            siteWidth,
+            1,
+            siteDepth
+        );
+
+
+    const siteMaterial =
+        new THREE.MeshStandardMaterial({
+
+            color: 0x334155,
+
+            roughness: 0.9,
+
+            metalness: 0.05
+
+        });
+
+
+    const site =
+        new THREE.Mesh(
+            siteGeometry,
+            siteMaterial
+        );
+
+
+    site.position.y =
+        0.3;
+
+
+    site.receiveShadow =
+        true;
+
+
+    siteGroup.add(
+        site
+    );
+
+
+
+    /* -----------------------------------------------------
+       Boundary Outline
+    ----------------------------------------------------- */
+
+    const boundaryPoints = [
+
+        new THREE.Vector3(
+            -siteWidth / 2,
+            0.85,
+            -siteDepth / 2
+        ),
+
+        new THREE.Vector3(
+            siteWidth / 2,
+            0.85,
+            -siteDepth / 2
+        ),
+
+        new THREE.Vector3(
+            siteWidth / 2,
+            0.85,
+            siteDepth / 2
+        ),
+
+        new THREE.Vector3(
+            -siteWidth / 2,
+            0.85,
+            siteDepth / 2
+        ),
+
+        new THREE.Vector3(
+            -siteWidth / 2,
+            0.85,
+            -siteDepth / 2
+        )
+
+    ];
+
+
+    const boundaryGeometry =
+        new THREE.BufferGeometry()
+            .setFromPoints(
+                boundaryPoints
+            );
+
+
+    const boundaryMaterial =
+        new THREE.LineBasicMaterial({
+
+            color: 0x0ea5e9
+
+        });
+
+
+    const boundary =
+        new THREE.Line(
+            boundaryGeometry,
+            boundaryMaterial
+        );
+
+
+    siteGroup.add(
+        boundary
+    );
+
+
+
+    /* -----------------------------------------------------
+       Road Reference
+    ----------------------------------------------------- */
+
+    const roadGeometry =
+        new THREE.PlaneGeometry(
+            150,
+            14
+        );
+
+
+    const roadMaterial =
+        new THREE.MeshStandardMaterial({
+
+            color: 0x111827,
+
+            roughness: 0.95
+
+        });
+
+
+    const road =
+        new THREE.Mesh(
+            roadGeometry,
+            roadMaterial
+        );
+
+
+    road.rotation.x =
+        -Math.PI / 2;
+
+
+    road.position.set(
+        0,
+        0.02,
+        -44
+    );
+
+
+    siteGroup.add(
+        road
+    );
+
+
+
+    /* -----------------------------------------------------
+       Road Markings
+    ----------------------------------------------------- */
+
+    for (
+        let x = -60;
+        x <= 60;
+        x += 12
+    ) {
+
+
+        const markingGeometry =
+            new THREE.BoxGeometry(
+                6,
+                0.05,
+                0.25
+            );
+
+
+        const markingMaterial =
+            new THREE.MeshBasicMaterial({
+
+                color: 0xf8fafc
+
+            });
+
+
+        const marking =
+            new THREE.Mesh(
+                markingGeometry,
+                markingMaterial
+            );
+
+
+        marking.position.set(
+            x,
+            0.08,
+            -44
+        );
+
+
+        siteGroup.add(
+            marking
+        );
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       Simple Site Access Reference
+    ----------------------------------------------------- */
+
+    const entranceGeometry =
+        new THREE.BoxGeometry(
+            10,
+            0.08,
+            10
+        );
+
+
+    const entranceMaterial =
+        new THREE.MeshStandardMaterial({
+
+            color: 0x64748b,
+
+            roughness: 0.8
+
+        });
+
+
+    const entrance =
+        new THREE.Mesh(
+            entranceGeometry,
+            entranceMaterial
+        );
+
+
+    entrance.position.set(
+        0,
+        0.85,
+        -34
+    );
+
+
+    siteGroup.add(
+        entrance
+    );
+
+
+
+    /* -----------------------------------------------------
+       Site Reference Marker
+    ----------------------------------------------------- */
+
+    const markerGroup =
+        new THREE.Group();
+
+
+    const markerPole =
+        new THREE.Mesh(
+
+            new THREE.CylinderGeometry(
+                0.25,
+                0.25,
+                7,
+                12
+            ),
+
+            new THREE.MeshStandardMaterial({
+                color: 0xef4444
+            })
+
+        );
+
+
+    markerPole.position.y =
+        4;
+
+
+    markerGroup.add(
+        markerPole
+    );
+
+
+    const markerTop =
+        new THREE.Mesh(
+
+            new THREE.SphereGeometry(
+                0.9,
+                16,
+                16
+            ),
+
+            new THREE.MeshStandardMaterial({
+                color: 0xef4444
+            })
+
+        );
+
+
+    markerTop.position.y =
+        7.5;
+
+
+    markerGroup.add(
+        markerTop
+    );
+
+
+    markerGroup.position.set(
+        0,
+        0,
+        0
+    );
+
+
+    siteGroup.add(
+        markerGroup
+    );
+
+
+
+    /* -----------------------------------------------------
+       Site Label
+    ----------------------------------------------------- */
+
+    const label =
+        create3DLabel(
+            "LOT 1704 • 3,335 m²"
+        );
+
+
+    label.position.set(
+        0,
+        5,
+        0
+    );
+
+
+    label.scale.set(
+        14,
+        5,
+        1
+    );
+
+
+    siteGroup.add(
+        label
+    );
+
+
+
+    /* -----------------------------------------------------
+       Resize
+    ----------------------------------------------------- */
+
+    window.addEventListener(
+        "resize",
+        resize3D
+    );
+
+
+
+    /* -----------------------------------------------------
+       Reset
+    ----------------------------------------------------- */
+
+    document
+        .getElementById(
+            "btn-reset-view"
+        )
+        .addEventListener(
+            "click",
+            () => {
+
+                camera.position.set(
+                    85,
+                    75,
+                    95
+                );
+
+
+                controls.target.set(
+                    0,
+                    0,
+                    0
+                );
+
+
+                controls.update();
+
+            }
+        );
+
+
+
+    animate3D();
+
+}
+
+
+
+/* =========================================================
+   CREATE SIMPLE 3D TEXT LABEL
+========================================================= */
+
+function create3DLabel(
+    text
+) {
+
+    const canvas =
+        document.createElement(
+            "canvas"
+        );
+
+
+    canvas.width = 512;
+
+    canvas.height = 128;
+
+
+    const context =
+        canvas.getContext(
+            "2d"
+        );
+
+
+    context.fillStyle =
+        "rgba(15,23,42,0.85)";
+
+
+    context.roundRect(
+        10,
+        10,
+        492,
+        108,
+        20
+    );
+
+
+    context.fill();
+
+
+    context.fillStyle =
+        "#ffffff";
+
+
+    context.font =
+        "bold 38px Inter";
+
+
+    context.textAlign =
+        "center";
+
+
+    context.textBaseline =
+        "middle";
+
+
+    context.fillText(
+        text,
+        256,
+        64
+    );
+
+
+    const texture =
+        new THREE.CanvasTexture(
+            canvas
+        );
+
+
+    const material =
+        new THREE.SpriteMaterial({
+
+            map: texture,
+
+            transparent: true
+
+        });
+
+
+    return new THREE.Sprite(
+        material
+    );
+
+}
+
+
+
+/* =========================================================
+   3D ANIMATION
+========================================================= */
+
+function animate3D() {
+
+    requestAnimationFrame(
+        animate3D
+    );
+
+
+    if (controls) {
+
+        controls.update();
+
+    }
+
+
+    if (renderer && scene && camera) {
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
+
+}
+
+
+
+/* =========================================================
+   3D RESIZE
+========================================================= */
+
+function resize3D() {
+
+    const container =
+        document.getElementById(
+            "three-container"
+        );
+
+
+    if (
+        !container ||
+        !camera ||
+        !renderer
+    ) {
+
+        return;
+
+    }
+
+
+    camera.aspect =
+        container.clientWidth /
+        container.clientHeight;
+
+
+    camera.updateProjectionMatrix();
+
+
+    renderer.setSize(
+
+        container.clientWidth,
+
+        container.clientHeight
+
+    );
+
+}
+
+
+
+/* =========================================================
+   LEAFLET MAP
+========================================================= */
+
+function initLeafletMap() {
+
+    const map =
+        L.map(
+            "leaflet-map"
+        )
+        .setView(
+
+            propertyData.mapCoords,
+
+            15
+
+        );
+
+
+
+    L.tileLayer(
+
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+
+        {
+
+            attribution:
+                "&copy; OpenStreetMap contributors",
+
+            maxZoom: 19
+
+        }
+
+    ).addTo(
+        map
+    );
+
+
+
+    /* -----------------------------------------------------
+       Property Marker
+    ----------------------------------------------------- */
+
+    const propertyIcon =
+        L.divIcon({
+
+            className: "",
+
+            html: `
+
+                <div style="
+                    width:24px;
+                    height:24px;
+                    background:#ef4444;
+                    border:3px solid white;
+                    border-radius:50%;
+                    box-shadow:
+                        0 0 14px
+                        rgba(239,68,68,.75);
+                "></div>
+
+            `,
+
+            iconSize: [
+                24,
+                24
+            ],
+
+            iconAnchor: [
+                12,
+                12
+            ]
+
+        });
+
+
+
+    L.marker(
+
+        propertyData.mapCoords,
+
+        {
+            icon: propertyIcon
+        }
+
+    )
+    .addTo(
+        map
+    )
+    .bindPopup(`
+
+        <div style="min-width:190px">
+
+            <strong
+                style="
+                    font-size:15px;
+                    color:#fff;
+                "
+            >
+                Lot 1704
+            </strong>
+
+            <br><br>
+
+            <span>
+                Land Area:
+                ${propertyData.landSize}
+            </span>
+
+            <br>
+
+            <span>
+                Kulim, Kedah
+            </span>
+
+            <br><br>
+
+            <span
+                style="
+                    color:#94a3b8;
+                    font-size:11px;
+                "
+            >
+                Approximate site reference point
+            </span>
+
+        </div>
+
+    `)
+    .openPopup();
+
+
+
+    /* -----------------------------------------------------
+       Nearby Reference Markers
+    ----------------------------------------------------- */
+
+    const nearbyPoints = [
+
+        {
+            name: "Toyota Showroom",
+            coords: [5.35458, 100.53126],
+            label: "Automotive reference — opposite / immediate area"
+        },
+
+        {
+            name: "Petron",
+            coords: [5.352953, 100.530915],
+            label: "Approx. 236 m from Lot 1704"
+        },
+
+        {
+            name: "Lotus's Kulim",
+            coords: [5.362126, 100.526240],
+            label: "Approx. 911 m from Lot 1704"
+        },
+
+        {
+            name: "Food & Beverage",
+            coords: [5.355264, 100.530810],
+            label: "Approx. 72 m from Lot 1704"
+        }
+
+    ];
+
+
+
+    nearbyPoints.forEach(
+        point => {
+
+            L.circleMarker(
+
+                point.coords,
+
+                {
+
+                    radius: 7,
+
+                    color: "#0ea5e9",
+
+                    fillColor: "#0ea5e9",
+
+                    fillOpacity: 0.8,
+
+                    weight: 2
+
+                }
+
+            )
+            .addTo(map)
+            .bindPopup(`
+
+                <strong>
+                    ${point.name}
+                </strong>
+
+                <br>
+
+                <span style="
+                    color:#94a3b8;
+                    font-size:11px;
+                ">
+                    ${point.label}
+                </span>
+
+            `);
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   FACILITY RENDERING
+========================================================= */
+
+function renderFacilities(
+    filter
+) {
+
+    const grid =
+        document.getElementById(
+            "facility-grid"
+        );
+
+
+    grid.innerHTML = "";
+
+
+
+    const filtered =
+
+        filter === "all"
+
+        ? facilitiesData
+
+        : facilitiesData.filter(
+
+            item =>
+                item.category === filter
+
+        );
+
+
+
+    filtered.forEach(
+        item => {
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "glass-card p-6 rounded-2xl";
+
+
+            card.innerHTML = `
+
+                <div
+                    class="
+                        w-12 h-12
+                        rounded-xl
+                        bg-slate-800
+                        flex items-center
+                        justify-center
+                        ${item.color}
+                        text-xl
+                    "
+                >
+
+                    <i
+                        class="
+                            fa-solid
+                            ${item.icon}
+                        "
+                    ></i>
+
+                </div>
+
+
+
+                <h4
+                    class="
+                        font-bold
+                        text-white
+                        text-base
+                        mt-5
+                    "
+                >
+
+                    ${item.name}
+
+                </h4>
+
+
+
+                <p
+                    class="
+                        text-xs
+                        text-slate-400
+                        mt-3
+                    "
+                >
+
+                    <i
+                        class="
+                            fa-solid
+                            fa-location-dot
+                            mr-1
+                            text-slate-500
+                        "
+                    ></i>
+
+                    ${item.distance}
+
+                </p>
+
+            `;
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   FACILITY FILTERS
+========================================================= */
+
+function setupFilterEvents() {
+
+    const buttons =
+        document.querySelectorAll(
+            ".filter-btn"
+        );
+
+
+    buttons.forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    buttons.forEach(
+                        btn => {
+
+                            btn.classList.remove(
+                                "bg-brand-blue",
+                                "text-white"
+                            );
+
+
+                            btn.classList.add(
+                                "bg-slate-800",
+                                "text-slate-300"
+                            );
+
+                        }
+                    );
+
+
+
+                    button.classList.remove(
+                        "bg-slate-800",
+                        "text-slate-300"
+                    );
+
+
+                    button.classList.add(
+                        "bg-brand-blue",
+                        "text-white"
+                    );
+
+
+
+                    renderFacilities(
+                        button.dataset.filter
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function setupMobileMenu() {
+
+    const button =
+        document.getElementById(
+            "mobile-menu-btn"
+        );
+
+
+    const menu =
+        document.getElementById(
+            "mobile-menu"
+        );
+
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            menu.classList.toggle(
+                "hidden"
+            );
+
+        }
+    );
+
+
+
+    menu.querySelectorAll(
+        "a"
+    )
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    menu.classList.add(
+                        "hidden"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
