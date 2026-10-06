@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
+    
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Lot 1704 | Kulim, Kedah | Property Information</title>
 
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <meta property="og:title" content="Lot 1704 | Commercial Land Opportunity in Kulim">
+    <meta property="og:description" content="3,335 m² (35,898 sq ft) strategic land parcel in an established commercial hub.">
+    <meta property="og:image" content="https://czg07.github.io/AmanHidupKekalSdn.Bhd./images/logo.png">
+    <meta property="og:url" content="https://czg07.github.io/AmanHidupKekalSdn.Bhd./">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,7 +18,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
-
 
     <link
         rel="stylesheet"
@@ -28,7 +30,6 @@
     >
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -124,15 +125,12 @@
     </style>
 </head>
 
-
-
 <body class="bg-navy-900 text-slate-100 antialiased">
 <header class="sticky top-0 z-50 glass-panel border-b border-slate-800">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="flex items-center justify-between h-20">
-
          <!-- Navigation Brand / Company Logo -->
 <a href="#" class="flex items-center gap-3 group">
     <!-- Logo Container -->
@@ -217,13 +215,9 @@
 
             </nav>
             <!-- Mobile Button -->
-            <button
-                id="mobile-menu-btn"
-                class="md:hidden p-2
-                       text-slate-300 hover:text-white"
-            >
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+          <button id="menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-white p-2 focus:outline-none">
+  <i class="fa-solid fa-bars text-xl"></i>
+</button>
         </div>
     </div>
     <!-- Mobile Menu -->
@@ -762,7 +756,6 @@
             Interactive Visualization
         </span>
 
-
         <h2
             class="text-3xl sm:text-4xl
                    font-extrabold
@@ -830,9 +823,7 @@
         </div>
 
 
-
         <!-- Controls -->
-
         <div
             class="absolute top-4 right-4
                    flex gap-2"
@@ -854,40 +845,15 @@
                 ></i>
 
                 Reset
-
             </button>
-
         </div>
-
-
-
-        <!-- Disclaimer -->
-
-        <div
-            class="absolute
-                   bottom-4 left-4
-                   glass-panel
-                   rounded-xl
-                   px-4 py-3"
-        >
-
-            <p
-                class="text-[11px]
-                       text-slate-300"
-            >
-
-                <i
-                    class="fa-solid
-                           fa-circle-info
-                           text-brand-blue mr-1"
-                ></i>
-
-                Illustrative visualisation only —
-                not a cadastral survey.
-
-            </p>
-
-        </div>
+        
+        <!-- Inside #canvas-container overlay -->
+<div class="absolute bottom-3 left-3 right-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 text-xs text-slate-400 bg-slate-900/90 p-2.5 rounded-lg backdrop-blur z-10">
+  <span class="hidden md:inline">Drag to rotate • Scroll to zoom • Right-click to pan</span>
+  <span class="inline md:hidden">Touch & drag to rotate 3D view</span>
+  <span class="text-[10px] text-slate-500">Illustrative visualization only</span>
+</div>
 
 
 
@@ -1787,92 +1753,29 @@
      CONTACT
 ========================================================= -->
 
-<section
-    id="contact"
-    class="py-20 px-4 sm:px-6 lg:px-8
-           border-t border-slate-800"
->
-
-
-    <div
-        class="max-w-4xl mx-auto
-               text-center"
-    >
-
-        <span
-            class="text-xs font-bold
-                   tracking-widest
-                   text-brand-blue uppercase"
-        >
-            Further Information
-        </span>
-
-
-        <h2
-            class="text-3xl sm:text-4xl
-                   font-extrabold
-                   text-white mt-2"
-        >
-            Interested in Lot 1704?
-        </h2>
-
-
-        <p
-            class="text-slate-400
-                   max-w-2xl mx-auto mt-4"
-        >
-            For further property information,
-            site viewing, title information or
-            commercial discussion, please contact
-            Aman Hidup Kekal Sdn.Bhd.
-        </p>
-
-
-
-        <div class="mt-8">
-
-            <div
-                class="glass-card
-                       rounded-2xl p-8"
-            >
-
-                <i
-                    class="fa-solid fa-building
-                           text-brand-blue text-3xl"
-                ></i>
-
-
-                <h3
-                    class="text-xl
-                           font-bold
-                           text-white mt-4"
-                >
-                    AMAN HIDUP KEKAL SDN.BHD.
-                </h3>
-
-
-                <p
-                    class="text-sm
-                           text-slate-400 mt-2"
-                >
-                    Property Information & Customer Enquiries
-                </p>
-
-
-                <p
-                    class="text-xs
-                           text-slate-500 mt-4"
-                >
-                    Official contact details can be added
-                    once confirmed by the company.
-                </p>
-
-            </div>
-
-        </div>
-
+<section id="contact" class="py-16 bg-slate-900/60 border-t border-slate-800">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Aman Hidup Kekal Sdn. Bhd.</h2>
+    <p class="text-slate-400 mb-8">For inquiries regarding Lot 1704 land acquisition, site visits, or documentation.</p>
+    
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/60123456789?text=Hi,%20I%20am%20interested%20in%20Lot%201704%20Kulim" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        Inquire via WhatsApp
+      </a>
+      
+      <a href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold transition">
+        <i class="fa-solid fa-map-location-dot text-xl"></i>
+        Open in Google Maps
+      </a>
     </div>
-
+  </div>
 </section>
 
 
