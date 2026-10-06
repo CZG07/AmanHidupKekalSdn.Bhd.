@@ -553,7 +553,7 @@
             type="button"
             class="property-option glass-card rounded-2xl p-7 text-left
                    border-2 border-transparent transition hover:-translate-y-1"
-            data-property="option2"
+            data-property="lot449"
         >
             <div class="flex items-center justify-between">
                 <span class="text-xs font-bold tracking-widest
@@ -563,16 +563,16 @@
                 <i class="fa-solid fa-location-dot text-brand-emerald"></i>
             </div>
             <h3 class="text-2xl font-black text-white mt-4">
-                Nearby Property
+                Lot 449
             </h3>
             <p class="text-slate-400 mt-2">
-                Alternative site located nearby in Kulim, Kedah
+                3,672 m² land parcel in Kulim, Kedah
             </p>
             <div class="mt-5 flex flex-wrap gap-2 text-xs">
                 <span class="px-3 py-1.5 rounded-full bg-slate-800
-                             text-slate-300">Nearby location</span>
+                             text-slate-300">Automotive environment</span>
                 <span class="px-3 py-1.5 rounded-full bg-slate-800
-                             text-slate-300">Map reference</span>
+                             text-slate-300">3D reference</span>
             </div>
         </button>
     </div>
@@ -581,9 +581,9 @@
         class="mt-6 p-4 rounded-xl border border-slate-800
                bg-slate-900/40 text-center text-xs text-slate-500"
     >
-        Option 02 details are limited to the currently available location
-        reference. Land area, title information and site boundary have not
-        been provided here.
+        Both properties are presented as preliminary location references.
+        Land title, exact cadastral boundaries, access conditions and other
+        property particulars should be verified against official records.
     </div>
 </section>
 
@@ -874,7 +874,8 @@
         >
             A simplified visual representation of the
             approximate land area of the selected property.
-            The current 3D model is available for Lot 1704.
+            The 3D model changes with the selected property and uses
+            an illustrative footprint based on the stated land area.
             It is provided only to help visitors understand
             the approximate scale of the property. No
             showroom, service centre or building proposal
@@ -1006,7 +1007,7 @@
             class="text-slate-400
                    max-w-2xl mx-auto mt-3"
         >
-            Explore the approximate location of Lot 1704
+            Explore the approximate location of the selected property
             and its surrounding automotive, retail and
             commercial environment.
         </p>
@@ -1044,6 +1045,7 @@
 
 
             <a
+                id="google-map-link"
                 href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1851,7 +1853,8 @@
         Inquire via WhatsApp
       </a>
       
-      <a href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238" 
+      <a id="google-map-link"
+                href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238" 
          target="_blank" 
          rel="noopener noreferrer" 
          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold transition">
@@ -1937,23 +1940,23 @@ const propertyOptions = {
 
     },
 
-    option2: {
+    lot449: {
 
-        refNumber: "OPTION-02-KLM",
+        refNumber: "LOT-449-KLM",
 
-        lotNumber: "Nearby Property",
+        lotNumber: "Lot 449",
 
-        name: "Nearby Property",
+        name: "Lot 449",
 
         location: "Kulim, Kedah",
 
         districtFull:
             "Mukim Kulim, District of Kulim, Kedah Darul Aman",
 
-        landSize: "Not provided",
+        landSize: "3,672 m²",
 
         landSizeMetric:
-            "Area information not provided",
+            "Approx. 39,525 sq.ft.",
 
         landType: "Land Parcel",
 
@@ -1962,7 +1965,7 @@ const propertyOptions = {
             100.530118
         ],
 
-        has3D: false
+        has3D: true
 
     }
 
@@ -1980,240 +1983,37 @@ let propertyData = propertyOptions.lot1704;
    They are not road or walking distances.
 ========================================================= */
 
-const facilitiesData = [
+const facilitySets = {
 
-    {
-        name: "Toyota Showroom",
-        category: "automotive",
-        icon: "fa-car",
-        distance: "Opposite the property",
-        color: "text-brand-blue"
-    },
+    "Lot 1704": [
+        { name: "Toyota Showroom", category: "automotive", icon: "fa-car", coords: [5.35458, 100.53126], color: "text-brand-blue", label: "Automotive reference" },
+        { name: "Petron", category: "transport", icon: "fa-gas-pump", coords: [5.352953, 100.530915], color: "text-yellow-400", label: "Petrol station" },
+        { name: "Lotus's Kulim", category: "retail", icon: "fa-cart-shopping", coords: [5.362126, 100.526240], color: "text-purple-400", label: "Retail / supermarket" },
+        { name: "Restaurants & Food Outlets", category: "food", icon: "fa-utensils", coords: [5.355264, 100.530810], color: "text-orange-400", label: "Food & beverage" }
+    ],
 
+    "Lot 449": [
+        { name: "Food & Beverage Street", category: "food", icon: "fa-utensils", coords: [5.359824, 100.529540], color: "text-orange-400", label: "A whole street of food & beverage outlets" },
+        { name: "Convenience Store", category: "retail", icon: "fa-store", coords: [5.360067, 100.529439], color: "text-purple-400", label: "Convenience retail" },
+        { name: "Proton Showroom", category: "automotive", icon: "fa-car", coords: [5.361315, 100.528903], color: "text-brand-blue", label: "Automotive showroom" },
+        { name: "Nissan Showroom", category: "automotive", icon: "fa-car-side", coords: [5.361315, 100.528903], color: "text-brand-blue", label: "Automotive showroom — same immediate reference point" },
+        { name: "Lotus's Kulim", category: "retail", icon: "fa-cart-shopping", coords: [5.362057, 100.526447], color: "text-purple-400", label: "Retail / supermarket" },
+        { name: "Car Wash Centre 1", category: "automotive", icon: "fa-spray-can-sparkles", coords: [5.361842, 100.526350], color: "text-cyan-400", label: "Car wash centre" },
+        { name: "Car Wash Centre 2", category: "automotive", icon: "fa-spray-can-sparkles", coords: [5.361688, 100.527304], color: "text-cyan-400", label: "Car wash centre" },
+        { name: "Petrol Station", category: "transport", icon: "fa-gas-pump", coords: [5.352913, 100.530978], color: "text-yellow-400", label: "Petrol station" },
+        { name: "Nearby Park", category: "commercial", icon: "fa-tree", coords: null, color: "text-brand-emerald", label: "Park adjacent to the petrol-station area" }
+    ]
 
-    {
-        name: "Petron",
-        category: "transport",
-        icon: "fa-gas-pump",
-        distance: "Approx. 236 m",
-        color: "text-yellow-400"
-    },
+};
 
-
-    {
-        name: "Lotus's Kulim",
-        category: "retail",
-        icon: "fa-cart-shopping",
-        distance: "Approx. 911 m",
-        color: "text-purple-400"
-    },
-
-
-    {
-        name: "Restaurants & Food Outlets",
-        category: "food",
-        icon: "fa-utensils",
-        distance: "Approx. 72 m",
-        color: "text-orange-400"
-    },
-
-
-    {
-        name: "Kulim Town Centre",
-        category: "commercial",
-        icon: "fa-building-columns",
-        distance: "Nearby",
-        color: "text-brand-emerald"
-    },
-
-
-    {
-        name: "Butterworth-Kulim Expressway",
-        category: "transport",
-        icon: "fa-road",
-        distance: "Accessibility reference",
-        color: "text-yellow-400"
-    },
-
-
-    {
-        name: "Kulim Hi-Tech Park",
-        category: "commercial",
-        icon: "fa-industry",
-        distance: "Surrounding area",
-        color: "text-cyan-400"
-    },
-
-
-    {
-        name: "Hospital Kulim",
-        category: "commercial",
-        icon: "fa-hospital",
-        distance: "Surrounding area",
-        color: "text-brand-emerald"
-    },
-
-
-    {
-        name: "Politeknik Tuanku Sultanah Bahiyah",
-        category: "commercial",
-        icon: "fa-graduation-cap",
-        distance: "Surrounding area",
-        color: "text-cyan-400"
-    }
-
-];
-
+let facilitiesData = [];
 
 
 /* =========================================================
    PROPERTY SELECTION
+/* =========================================================
+   PROPERTY SELECTION
 ========================================================= */
-
-let leafletMap = null;
-
-
-const referencePoints = {
-
-    "Toyota Showroom": [5.35458, 100.53126],
-
-    "Petron": [5.352953, 100.530915],
-
-    "Lotus's Kulim": [5.362126, 100.526240],
-
-    "Restaurants & Food Outlets": [5.355264, 100.530810]
-
-};
-
-
-function formatDistance(metres) {
-
-    if (metres < 1000) {
-
-        return "Approx. " + Math.round(metres) + " m";
-
-    }
-
-    return "Approx. " + (metres / 1000).toFixed(2) + " km";
-
-}
-
-
-function calculateDistance(a, b) {
-
-    const R = 6371000;
-
-    const lat1 = a[0] * Math.PI / 180;
-
-    const lat2 = b[0] * Math.PI / 180;
-
-    const dLat =
-        (b[0] - a[0]) * Math.PI / 180;
-
-    const dLon =
-        (b[1] - a[1]) * Math.PI / 180;
-
-    const x =
-        Math.sin(dLat / 2) ** 2 +
-        Math.cos(lat1) *
-        Math.cos(lat2) *
-        Math.sin(dLon / 2) ** 2;
-
-    return 2 * R * Math.asin(Math.sqrt(x));
-
-}
-
-
-function updateFacilityDistances() {
-
-    const origin = propertyData.mapCoords;
-
-    facilitiesData.forEach(item => {
-
-        if (referencePoints[item.name]) {
-
-            item.distance =
-                formatDistance(
-                    calculateDistance(
-                        origin,
-                        referencePoints[item.name]
-                    )
-                );
-
-        }
-
-    });
-
-    /* Keep the automotive relationship clear without
-       claiming an exact frontage or road distance. */
-
-    const toyota =
-        facilitiesData.find(
-            item => item.name === "Toyota Showroom"
-        );
-
-    if (toyota) {
-
-        toyota.distance =
-            formatDistance(
-                calculateDistance(
-                    origin,
-                    referencePoints["Toyota Showroom"]
-                )
-            ) +
-            " straight-line reference";
-
-    }
-
-}
-
-
-function updatePropertyUI() {
-
-    document.getElementById("hero-ref").innerText =
-        propertyData.refNumber;
-
-    document.getElementById("hero-property-name").innerText =
-        propertyData.name.toUpperCase();
-
-    document.getElementById("hero-property-location").innerText =
-        propertyData.location.toUpperCase();
-
-    document.getElementById("hero-stat-size").innerText =
-        propertyData.landSize;
-
-    document.getElementById("card-size").innerText =
-        propertyData.landSize;
-
-    document.getElementById("card-size-metric").innerText =
-        propertyData.landSizeMetric;
-
-    document.getElementById("card-location").innerText =
-        propertyData.location;
-
-    document.getElementById("card-district").innerText =
-        propertyData.districtFull;
-
-    document.getElementById("card-land-type").innerText =
-        propertyData.landType;
-
-    document.getElementById("card-lot").innerText =
-        propertyData.lotNumber;
-
-    document.getElementById("three-property-name").innerText =
-        propertyData.name.toUpperCase();
-
-    document.getElementById("visualization3d").classList.toggle(
-        "hidden",
-        !propertyData.has3D
-    );
-
-    updateFacilityDistances();
-
-    renderFacilities("all");
-
-}
-
 
 function selectProperty(propertyKey) {
 
@@ -2256,7 +2056,7 @@ function selectProperty(propertyKey) {
     if (leafletMap) {
 
         leafletMap.remove();
-
+        leafletMap = null;
         initLeafletMap();
 
     }
@@ -2305,6 +2105,7 @@ window.addEventListener(
         updatePropertyUI();
 
         init3DVisualization();
+        refresh3DModel();
 
         initLeafletMap();
 
@@ -2781,48 +2582,6 @@ function init3DVisualization() {
 
 
     /* -----------------------------------------------------
-       Simple Site Access Reference
-    ----------------------------------------------------- */
-
-    const entranceGeometry =
-        new THREE.BoxGeometry(
-            10,
-            0.08,
-            10
-        );
-
-
-    const entranceMaterial =
-        new THREE.MeshStandardMaterial({
-
-            color: 0x64748b,
-
-            roughness: 0.8
-
-        });
-
-
-    const entrance =
-        new THREE.Mesh(
-            entranceGeometry,
-            entranceMaterial
-        );
-
-
-    entrance.position.set(
-        0,
-        0.85,
-        -34
-    );
-
-
-    siteGroup.add(
-        entrance
-    );
-
-
-
-    /* -----------------------------------------------------
        Site Reference Marker
     ----------------------------------------------------- */
 
@@ -2900,7 +2659,8 @@ function init3DVisualization() {
 
     const label =
         create3DLabel(
-            "LOT 1704 • 3,335 m² (Illustrative)"
+            propertyData.lotNumber.toUpperCase() +
+            " • " + propertyData.landSize + " (Illustrative)"
         );
 
 
@@ -3235,7 +2995,7 @@ function initLeafletMap() {
                     color:#fff;
                 "
             >
-                Lot 1704
+                ${propertyData.name}
             </strong>
 
             <br><br>
@@ -3273,33 +3033,7 @@ function initLeafletMap() {
        Nearby Reference Markers
     ----------------------------------------------------- */
 
-    const nearbyPoints = [
-
-        {
-            name: "Toyota Showroom",
-            coords: [5.35458, 100.53126],
-            label: "Automotive reference — opposite / immediate area"
-        },
-
-        {
-            name: "Petron",
-            coords: [5.352953, 100.530915],
-            label: "Approx. 236 m from Lot 1704"
-        },
-
-        {
-            name: "Lotus's Kulim",
-            coords: [5.362126, 100.526240],
-            label: "Approx. 911 m from Lot 1704"
-        },
-
-        {
-            name: "Food & Beverage",
-            coords: [5.355264, 100.530810],
-            label: "Approx. 72 m from Lot 1704"
-        }
-
-    ];
+    const nearbyPoints = facilitiesData.filter(point => point.coords);
 
 
 
