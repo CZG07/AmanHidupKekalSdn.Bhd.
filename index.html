@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lot 1704 | Kulim, Kedah | Property Information</title>
+    <title>Lot 1704 | Kulim, Kedah | Land Property Information</title>
 
     <link rel="icon" type="image/png" href="images/logo.png">
-    <meta property="og:title" content="Lot 1704 | Commercial Land Opportunity in Kulim">
-    <meta property="og:description" content="3,335 m² (35,898 sq ft) strategic land parcel in an established commercial hub.">
+    <meta property="og:title" content="Lot 1704 | Land Property Opportunity in Kulim">
+    <meta property="og:description" content="3,335 m² land parcel in Kulim, located within an established automotive, retail and commercial environment.">
     <meta property="og:image" content="https://czg07.github.io/AmanHidupKekalSdn.Bhd./images/logo.png">
     <meta property="og:url" content="https://czg07.github.io/AmanHidupKekalSdn.Bhd./">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -365,8 +365,9 @@
                    max-w-2xl mx-auto"
         >
             Presented as a property location reference
-            for automotive businesses evaluating
+            for an automotive company evaluating
             potential sites in Kulim.
+            No development or business arrangement is assumed.
         </p>
 
         <!-- Quick Information -->
@@ -771,8 +772,10 @@
         >
             A simplified visual representation of the
             approximate land area of Lot 1704.
-            It is provided to help visitors understand
-            the scale and general property context.
+            It is provided only to help visitors understand
+            the approximate scale of the property. No
+            showroom, service centre or building proposal
+            is represented in this model.
         </p>
 
     </div>
@@ -857,29 +860,6 @@
 
 
 
-        <!-- Instructions -->
-
-        <div
-            class="absolute
-                   bottom-4
-                   left-1/2
-                   -translate-x-1/2
-                   glass-panel
-                   rounded-full
-                   px-5 py-2
-                   text-xs text-slate-300
-                   whitespace-nowrap"
-        >
-
-            <i
-                class="fa-solid
-                       fa-hand-pointer
-                       text-brand-blue mr-1"
-            ></i>
-
-            Drag to rotate • Scroll to zoom • Right-click to pan
-
-        </div>
 
     </div>
 
@@ -1014,7 +994,7 @@
                    font-extrabold
                    text-white mt-2"
         >
-            Why This Location?
+            Why This Location Matters to an Automotive Business
         </h2>
 
 
@@ -1024,8 +1004,9 @@
         >
             Lot 1704 is surrounded by established
             automotive, retail, fuel and food-related
-            activities, creating a practical location
-            context for an automotive business to evaluate.
+            activities. These existing surroundings provide
+            useful location context for an automotive company
+            considering the property.
         </p>
 
     </div>
@@ -1854,8 +1835,9 @@ const propertyData = {
 /* =========================================================
    NEARBY FACILITIES DATA
 
-   Distances are approximate straight-line
-   reference distances based on available coordinates.
+   Selected distances are approximate straight-line
+   references based on the available coordinates.
+   They are not road or walking distances.
 ========================================================= */
 
 const facilitiesData = [
@@ -2006,7 +1988,7 @@ window.addEventListener(
         document.getElementById(
             "boundary-coords-label"
         ).innerText =
-            "Illustrative representation — not a cadastral boundary";
+            "Illustrative land area only — not a cadastral boundary";
 
 
 
@@ -2608,7 +2590,7 @@ function init3DVisualization() {
 
     const label =
         create3DLabel(
-            "LOT 1704 • 3,335 m²"
+            "LOT 1704 • 3,335 m² (Illustrative)"
         );
 
 
@@ -3086,27 +3068,16 @@ function renderFacilities(
 
             item =>
                 item.category === filter
-
         );
-
-
-
     filtered.forEach(
         item => {
-
-
             const card =
                 document.createElement(
                     "div"
                 );
-
-
             card.className =
                 "glass-card p-6 rounded-2xl";
-
-
             card.innerHTML = `
-
                 <div
                     class="
                         w-12 h-12
@@ -3118,18 +3089,13 @@ function renderFacilities(
                         text-xl
                     "
                 >
-
                     <i
                         class="
                             fa-solid
                             ${item.icon}
                         "
                     ></i>
-
                 </div>
-
-
-
                 <h4
                     class="
                         font-bold
@@ -3138,13 +3104,8 @@ function renderFacilities(
                         mt-5
                     "
                 >
-
                     ${item.name}
-
                 </h4>
-
-
-
                 <p
                     class="
                         text-xs
@@ -3152,7 +3113,6 @@ function renderFacilities(
                         mt-3
                     "
                 >
-
                     <i
                         class="
                             fa-solid
@@ -3161,147 +3121,102 @@ function renderFacilities(
                             text-slate-500
                         "
                     ></i>
-
                     ${item.distance}
-
                 </p>
-
             `;
-
-
             grid.appendChild(
                 card
             );
-
         }
     );
-
 }
-
-
-
 /* =========================================================
    FACILITY FILTERS
 ========================================================= */
-
 function setupFilterEvents() {
-
     const buttons =
         document.querySelectorAll(
             ".filter-btn"
         );
 
-
     buttons.forEach(
         button => {
-
-
             button.addEventListener(
                 "click",
                 () => {
 
-
                     buttons.forEach(
                         btn => {
-
                             btn.classList.remove(
                                 "bg-brand-blue",
                                 "text-white"
                             );
 
-
                             btn.classList.add(
                                 "bg-slate-800",
                                 "text-slate-300"
                             );
-
                         }
                     );
-
-
 
                     button.classList.remove(
                         "bg-slate-800",
                         "text-slate-300"
                     );
-
-
                     button.classList.add(
                         "bg-brand-blue",
                         "text-white"
                     );
 
-
-
                     renderFacilities(
                         button.dataset.filter
                     );
-
                 }
             );
-
         }
     );
-
 }
-
-
 
 /* =========================================================
    MOBILE MENU
 ========================================================= */
 
 function setupMobileMenu() {
-
     const button =
         document.getElementById(
-            "mobile-menu-btn"
+            "menu-btn"
         );
-
 
     const menu =
         document.getElementById(
             "mobile-menu"
         );
 
-
     button.addEventListener(
         "click",
         () => {
-
             menu.classList.toggle(
                 "hidden"
             );
-
         }
     );
-
-
 
     menu.querySelectorAll(
         "a"
     )
     .forEach(
         link => {
-
             link.addEventListener(
                 "click",
                 () => {
-
                     menu.classList.add(
                         "hidden"
                     );
-
                 }
             );
-
         }
     );
-
 }
-
 </script>
-
-
 </body>
 </html>
