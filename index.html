@@ -21,8 +21,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Three.js Library -->
+  <!-- Three.js Library & OrbitControls -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
   <style>
     /* Mandatory explicit heights to prevent blank map / 3D canvas */
@@ -252,7 +253,6 @@
   <!-- JavaScript Application Pipeline -->
   <script>
     // Property Data Options
-    // Only confirmed information supplied for the two property options is shown here.
     const landOptions = {
       opt1: {
         badge: "Option 1 Selected",
@@ -289,10 +289,9 @@
     let activeOptionKey = 'opt1';
     let leafletMap = null;
     let leafletMarker = null;
-    let threeScene, threeRenderer, threeCamera, landMesh, labelSprite;
+    let threeScene, threeRenderer, threeCamera, threeControls, landMesh, labelSprite;
 
     // Nearby businesses / location references for each property.
-    // Distances are calculated as straight-line references from the selected property's coordinates.
     const facilitySets = {
       opt1: [
         { name: "Toyota Showroom", category: "automotive", coords: [5.35458, 100.53126], desc: "Toyota showroom in the immediate area" },
@@ -304,7 +303,7 @@
         { name: "Food & Beverage Street", category: "food", coords: [5.359824, 100.529540], desc: "A street with multiple food and beverage outlets" },
         { name: "Convenience Store", category: "commercial", coords: [5.360067, 100.529439], desc: "Nearby convenience store" },
         { name: "Proton Showroom", category: "automotive", coords: [5.361315, 100.528903], desc: "Automotive showroom reference" },
-        { name: "Nissan Showroom", category: "automotive", coords: [5.361315, 100.528903], desc: "Automotive showroom reference" },
+        { name: "Nissan Showroom", category: "automotive", coords: [5.361450, 100.529050], desc: "Automotive showroom reference" },
         { name: "Lotus's", category: "commercial", coords: [5.362057, 100.526447], desc: "Retail and hypermarket reference" },
         { name: "Car Wash Centre", category: "automotive", coords: [5.361842, 100.526350], desc: "Nearby car wash service" },
         { name: "Car Wash Centre", category: "automotive", coords: [5.361688, 100.527304], desc: "Nearby car wash service" },
@@ -493,7 +492,7 @@
       render('all');
     }
 
-    // Three.js 3D Viewer Setup
+    // Three.js 3D Viewer Setup with OrbitControls
     function init3DViewer() {
       const container = document.getElementById('canvas-container');
       if (!container || typeof THREE === 'undefined') return;
@@ -506,16 +505,24 @@
       threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       container.appendChild(threeRenderer.domElement);
 
+      // Enable Interactive Orbit Controls
+      if (typeof THREE.OrbitControls !== 'undefined') {
+        threeControls = new THREE.OrbitControls(threeCamera, threeRenderer.domElement);
+        threeControls.enableDamping = true;
+        threeControls.dampingFactor = 0.05;
+        threeControls.maxPolarAngle = Math.PI / 2 - 0.05; // Keep camera above ground level
+      }
+
       const current = landOptions[activeOptionKey];
 
       // Illustrative Land Mesh
       const landGeo = new THREE.PlaneGeometry(current.dimensions.x, current.dimensions.z);
-      const landMat = new THREE.MeshBasicMaterial({ color: 0x0284c7, side: THREE.DoubleSide });
+      const landMat = new THREE.MeshBasicMaterial({ color: current.color, side: THREE.DoubleSide });
       landMesh = new THREE.Mesh(landGeo, landMat);
       landMesh.rotation.x = Math.PI / 2;
       threeScene.add(landMesh);
 
-      // Floating Label (Elevated above pole height at y = 12)
+      // Floating Label
       labelSprite = create3DLabel(current.label);
       labelSprite.position.set(0, 12, 0);
       threeScene.add(labelSprite);
@@ -527,7 +534,6 @@
       pole.position.set(0, 4, 0);
       threeScene.add(pole);
 
-
       // Lighting & Camera Position
       const ambient = new THREE.AmbientLight(0xffffff, 0.9);
       threeScene.add(ambient);
@@ -537,6 +543,7 @@
 
       function animate() {
         requestAnimationFrame(animate);
+        if (threeControls) threeControls.update();
         threeRenderer.render(threeScene, threeCamera);
       }
       animate();
@@ -571,7 +578,7 @@
       }
     }
 
-    // Option Selector Click Handler
+    // Option Selector Click Handler & Synchronized State Update
     function setupOptionToggles() {
       const opt1Btn = document.getElementById('opt1-btn');
       const opt2Btn = document.getElementById('opt2-btn');
@@ -590,7 +597,7 @@
         document.getElementById('spec-usage').textContent = current.usage;
         document.getElementById('spec-access').textContent = current.access;
 
-        // Update Links
+        // Dynamic Contact Links
         document.getElementById('map-link').href = `https://www.google.com/maps/search/?api=1&query=${current.coords}`;
         document.getElementById('whatsapp-link').href = `https://wa.me/60123456789?text=Hi,%20I%20am%20interested%20in%20${encodeURIComponent(current.title)}`;
 
@@ -603,7 +610,7 @@
           opt1Btn.className = 'option-toggle px-6 py-3 rounded-xl bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2';
         }
 
-        // Update Map & 3D Footprint
+        // Update Map, Facilities, & 3D Footprint
         updateMapPosition();
         update3DModel();
         if (window.renderFacilities) window.renderFacilities('all');
@@ -611,6 +618,9 @@
 
       if (opt1Btn) opt1Btn.addEventListener('click', () => selectOption('opt1'));
       if (opt2Btn) opt2Btn.addEventListener('click', () => selectOption('opt2'));
+
+      // Initial synchronization on load
+      selectOption('opt1');
     }
 
     // DOM Execution Pipeline
@@ -624,11 +634,13 @@
         }
       } catch (e) { console.error('Menu error:', e); }
 
-      // Initialize Core Components independently
-      try { setupOptionToggles(); } catch (e) { console.error('Toggles error:', e); }
+      // Initialize Core Views
       try { initMap(); } catch (e) { console.error('Map error:', e); }
       try { initFacilities(); } catch (e) { console.error('Facilities error:', e); }
       try { init3DViewer(); } catch (e) { console.error('3D error:', e); }
+
+      // Attach Toggles & Synchronize Initial Selection State
+      try { setupOptionToggles(); } catch (e) { console.error('Toggles error:', e); }
     });
   </script>
 </body>
