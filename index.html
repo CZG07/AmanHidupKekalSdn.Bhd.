@@ -11,7 +11,6 @@
   <!-- OpenGraph Meta Tags -->
   <meta property="og:title" content="Aman Hidup Kekal | Lot Information & Property Options in Kulim">
   <meta property="og:description" content="Two land property options in Kulim, Kedah with location, nearby business and illustrative 3D information.">
-  <meta property="og:image" content="https://czg07.github.io/AmanHidupKekalSdn.Bhd./images/logo.png">
 
   <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,8 +27,8 @@
   <style>
     #map, #canvas-container {
       width: 100%;
-      height: 480px;
-      min-height: 480px;
+      height: 540px;
+      min-height: 540px;
     }
   </style>
 </head>
@@ -69,82 +68,63 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative py-16 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-950 border-b border-slate-800">
+  <section class="relative py-14 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-950 border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-4">
         <i class="fa-solid fa-location-dot"></i> Prime Commercial Belt • Kulim, Kedah
       </div>
-      <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-        Land Property <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Options in Kulim</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+        Land Property <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Options in Kulim</span>
       </h1>
-      <p class="max-w-3xl mx-auto text-slate-400 text-base md:text-lg mb-10">
-        Two land property options located in Kulim, Kedah. Explore each lot's basic information, surrounding businesses, location, and interactive 3D layout visualizer.
+      <p class="max-w-3xl mx-auto text-slate-400 text-sm md:text-base mb-8">
+        Two land property options located in Kulim, Kedah. Explore each lot's basic information, surrounding businesses, location, and interactive 3D layout visualizers based on approved plan maps.
       </p>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div class="text-xs text-slate-500 font-medium">Property Type</div>
-          <div class="text-base font-bold text-white mt-1">Commercial Subdivided Land</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div class="text-xs text-slate-500 font-medium">Location</div>
-          <div class="text-base font-bold text-emerald-400 mt-1">Kulim, Kedah</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div class="text-xs text-slate-500 font-medium">Options Available</div>
-          <div class="text-base font-bold text-white mt-1">2 Land Parcels</div>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div class="text-xs text-slate-500 font-medium">Information Status</div>
-          <div class="text-base font-bold text-sky-400 mt-1">Approved Layout Reference</div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Section: Land Portfolio Options -->
-  <section id="portfolio" class="py-16 max-w-7xl mx-auto px-4">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-white mb-2">Select Property Option</h2>
-      <p class="text-slate-400 text-sm">Choose a property option below to view its lot information, 3D site layout, map, and nearby businesses.</p>
+  <section id="portfolio" class="py-12 max-w-7xl mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold text-white mb-2">Select Property Option</h2>
+      <p class="text-slate-400 text-xs md:text-sm">Choose a property option below to view its lot information and 3D site layout.</p>
       
       <div class="flex justify-center gap-4 mt-6">
-        <button id="opt1-btn" class="option-toggle px-6 py-3 rounded-xl bg-sky-600 text-white font-semibold shadow-lg shadow-sky-600/20 border border-sky-500 transition-all flex items-center gap-2">
+        <button id="opt1-btn" class="option-toggle px-5 py-2.5 rounded-xl bg-sky-600 text-white font-semibold text-sm shadow-lg shadow-sky-600/20 border border-sky-500 transition-all flex items-center gap-2">
           <i class="fa-solid fa-map-pin"></i> Option 1: Lot 1704 (3,335 m²)
         </button>
-        <button id="opt2-btn" class="option-toggle px-6 py-3 rounded-xl bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2">
+        <button id="opt2-btn" class="option-toggle px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-semibold text-sm hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2">
           <i class="fa-solid fa-layer-group"></i> Option 2: Lot 449 (3,672 m²)
         </button>
       </div>
     </div>
 
     <!-- Dynamic Property Details Card -->
-    <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 md:p-8 max-w-4xl mx-auto">
-      <div class="text-xs uppercase tracking-wider text-sky-400 font-bold mb-4">Lot Information</div>
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-6 mb-6">
+    <div class="bg-slate-900/90 rounded-2xl border border-slate-800 p-6 max-w-4xl mx-auto">
+      <div class="text-xs uppercase tracking-wider text-sky-400 font-bold mb-3">Lot Details</div>
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-4 mb-4">
         <div>
           <span id="selected-badge" class="px-2.5 py-1 rounded bg-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-wider">Option 1 Selected</span>
-          <h3 id="selected-title" class="text-2xl font-bold text-white mt-2">Lot 1704</h3>
-          <p id="selected-subtitle" class="text-slate-400 text-sm">Land property reference in Kulim, Kedah. Subdivided into 11 plot units with a 6.096m rear lane and parking zone.</p>
+          <h3 id="selected-title" class="text-2xl font-bold text-white mt-1">Lot 1704</h3>
+          <p id="selected-subtitle" class="text-slate-400 text-xs md:text-sm">Subdivided 3,335 m² land parcel with 11 individual plots, a 6.096m rear lane, and 8 parking bays.</p>
         </div>
         <div class="text-right">
-          <div id="selected-area" class="text-3xl font-extrabold text-sky-400">3,335 m²</div>
+          <div id="selected-area" class="text-2xl md:text-3xl font-extrabold text-sky-400">3,335 m²</div>
           <div id="selected-sqft" class="text-xs text-slate-500 font-medium">35,886 sq ft</div>
         </div>
       </div>
 
       <!-- Specs Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-sm">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs md:text-sm">
         <div>
-          <span class="text-slate-500 block text-xs">Coordinates</span>
+          <span class="text-slate-500 block">Coordinates</span>
           <span id="spec-coords" class="text-slate-200 font-mono font-medium">5.354963, 100.530238</span>
         </div>
         <div>
-          <span class="text-slate-500 block text-xs">Subdivided Units</span>
-          <span id="spec-usage" class="text-slate-200 font-medium">11 Plot Units + Alley</span>
+          <span class="text-slate-500 block">Subdivided Units</span>
+          <span id="spec-usage" class="text-slate-200 font-medium">11 Plots + 8 Parking Spaces</span>
         </div>
         <div>
-          <span class="text-slate-500 block text-xs">Access Infrastructure</span>
+          <span class="text-slate-500 block">Access Infrastructure</span>
           <span id="spec-access" class="text-slate-200 font-medium">Simpanan Jalan 12.192m</span>
         </div>
       </div>
@@ -152,57 +132,48 @@
   </section>
 
   <!-- Section: Interactive 3D Footprint -->
-  <section id="visualizer" class="py-16 bg-slate-900/50 border-y border-slate-800">
+  <section id="visualizer" class="py-12 bg-slate-900/50 border-y border-slate-800">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-end">
-        <div>
-          <h2 class="text-2xl font-bold text-white">3D Interactive Site Plan Model</h2>
-          <p class="text-slate-400 text-sm">3D visualization modeled directly from the site plan layout map.</p>
-        </div>
+      <div class="mb-4">
+        <h2 class="text-2xl font-bold text-white">3D Interactive Site Plan Model</h2>
+        <p class="text-slate-400 text-xs md:text-sm">Modeled based on approved survey plan maps (PA68736).</p>
       </div>
 
       <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
         <div id="canvas-container" class="w-full"></div>
         
-        <!-- Interactive Legend -->
-        <div class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md p-3 rounded-xl border border-slate-800 text-xs space-y-2 z-10 hidden sm:block">
-          <div class="font-bold text-slate-200 border-b border-slate-800 pb-1">Site Plan Legend</div>
-          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-amber-500/80 inline-block"></span> West Lots 1–4 (360–488 m²)</div>
-          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-sky-500/80 inline-block"></span> East Lots 5–11 (127–149 m²)</div>
-          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-slate-700 inline-block"></span> Lorong Belakang (6.096m Alley)</div>
-          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-emerald-500/80 inline-block"></span> Parking Zone (Tempat Letak Kereta)</div>
+        <!-- Dynamic Interactive Legend -->
+        <div id="dynamic-legend" class="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-800 text-xs space-y-2 z-10 hidden sm:block">
+          <!-- Populated by JavaScript -->
         </div>
 
-        <div class="absolute bottom-3 left-3 right-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 text-xs text-slate-400 bg-slate-900/90 p-3 rounded-lg backdrop-blur z-10 border border-slate-800">
+        <div class="absolute bottom-3 left-3 right-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 text-xs text-slate-400 bg-slate-900/90 p-2.5 rounded-lg backdrop-blur z-10 border border-slate-800">
           <span>Drag to rotate • Scroll to zoom • Right-click to pan camera</span>
-          <span class="text-[10px] text-slate-500">Modeled based on approved Lot 1704 plan map</span>
+          <span id="plan-reference-tag" class="text-[10px] text-slate-500">Modeled based on approved plan map PA68736</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Section: Map & Surroundings -->
-  <section id="location" class="py-16 max-w-7xl mx-auto px-4">
+  <section id="location" class="py-12 max-w-7xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
       <!-- Facilities List -->
-      <div class="lg:col-span-5 space-y-6">
+      <div class="lg:col-span-5 space-y-4">
         <div>
           <h2 class="text-2xl font-bold text-white">Location & Nearby Businesses</h2>
-          <p class="text-slate-400 text-sm mt-1">Nearby amenities and businesses surrounding the property.</p>
+          <p class="text-slate-400 text-xs md:text-sm mt-1">Nearby amenities surrounding the lot.</p>
         </div>
 
-        <!-- Filter Buttons -->
         <div class="flex flex-wrap gap-2">
           <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white transition" data-category="all">All</button>
           <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="automotive">Automotive</button>
-          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="commercial">Retail & Commercial</button>
-          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="food">Food & Beverage</button>
-          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="transport">Transport</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="commercial">Retail</button>
+          <button class="filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-400 hover:bg-slate-700 transition" data-category="food">F&B</button>
         </div>
 
-        <!-- Cards Container -->
-        <div id="facilities-grid" class="space-y-3"></div>
+        <div id="facilities-grid" class="space-y-2.5"></div>
       </div>
 
       <!-- Leaflet Map Container -->
@@ -216,21 +187,21 @@
   </section>
 
   <!-- Section: Contact -->
-  <section id="contact" class="py-16 bg-slate-900/80 border-t border-slate-800">
+  <section id="contact" class="py-12 bg-slate-900/80 border-t border-slate-800">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-white mb-2">Aman Hidup Kekal Sdn. Bhd.</h2>
-      <p class="text-slate-400 text-sm mb-8">For enquiries regarding Lot 1704 or Lot 449, please contact our team.</p>
+      <h2 class="text-2xl font-bold text-white mb-2">Aman Hidup Kekal Sdn. Bhd.</h2>
+      <p class="text-slate-400 text-xs md:text-sm mb-6">For enquiries regarding Lot 1704 or Lot 449, contact our sales team.</p>
       
       <div class="flex flex-wrap justify-center gap-4">
         <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition shadow-lg shadow-emerald-600/20">
-          <i class="fa-brands fa-whatsapp text-xl"></i>
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold transition shadow-lg shadow-emerald-600/20">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
           WhatsApp Inquiry
         </a>
         
-        <a id="map-link" href="https://www.google.com/maps/search/?api=1&query=5.354963,100.530238" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold transition shadow-lg shadow-sky-600/20">
-          <i class="fa-solid fa-map-location-dot text-xl"></i>
+        <a id="map-link" href="#" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-sm font-bold transition shadow-lg shadow-sky-600/20">
+          <i class="fa-solid fa-map-location-dot text-lg"></i>
           Open in Google Maps
         </a>
       </div>
@@ -247,26 +218,26 @@
       opt1: {
         badge: "Option 1 Selected",
         title: "Lot 1704",
-        subtitle: "Subdivided 3,335 m² land parcel with 11 individual plots, rear service lane, and dedicated parking spaces.",
+        subtitle: "Subdivided 3,335 m² land parcel with 11 individual plots, a 6.096m rear lane, and 8 dedicated parking bays.",
         area: "3,335 m²",
         sqft: "35,886 sq ft",
         coords: "5.354963, 100.530238",
         lat: 5.354963,
         lng: 100.530238,
-        usage: "11 Plot Units + Alley",
+        usage: "11 Plots + 8 Parking Spaces",
         access: "Simpanan Jalan 12.192m"
       },
       opt2: {
         badge: "Option 2 Selected",
-        title: "Lot 449",
-        subtitle: "Land property reference in Kulim, Kedah near automotive showrooms, food outlets, retail, and services.",
+        title: "Lot 449 (PA68736)",
+        subtitle: "Subdivided 3,672 m² commercial land with 14 plots (163.15–245.63 m²), rear & side alleys (6.096m), and Kawasan Lapang open spaces.",
         area: "3,672 m²",
         sqft: "39,525 sq ft",
         coords: "5.358793, 100.530118",
         lat: 5.358793,
         lng: 100.530118,
-        usage: "Land Property",
-        access: "Location reference"
+        usage: "14 Commercial Plots + Kawasan Lapang",
+        access: "Simpanan Jalan 12.192m & Lorong Belakang/Sisi 6.096m"
       }
     };
 
@@ -290,8 +261,8 @@
       ]
     };
 
-    // Helper: 3D Text Label Generator
-    function create3DLabel(text, width = 1024, height = 256, fontSize = 42, color = '#ffffff', bgColor = 'rgba(15, 23, 42, 0.85)') {
+    // Helper: High Resolution Canvas Text Sprite for 3D Labels
+    function create3DLabel(text, width = 1024, height = 512, fontSize = 44, color = '#ffffff', bgColor = 'rgba(15, 23, 42, 0.90)') {
       const canvas = document.createElement('canvas');
       canvas.width = width;
       canvas.height = height;
@@ -299,29 +270,39 @@
 
       ctx.fillStyle = bgColor;
       ctx.strokeStyle = '#38bdf8';
-      ctx.lineWidth = 4;
+      ctx.lineWidth = 6;
 
       if (typeof ctx.roundRect === 'function') {
-        ctx.roundRect(8, 8, width - 16, height - 16, 16);
+        ctx.roundRect(12, 12, width - 24, height - 24, 20);
         ctx.fill();
         ctx.stroke();
       } else {
-        ctx.fillRect(8, 8, width - 16, height - 16);
-        ctx.strokeRect(8, 8, width - 16, height - 16);
+        ctx.fillRect(12, 12, width - 24, height - 24);
+        ctx.strokeRect(12, 12, width - 24, height - 24);
       }
 
-      ctx.font = `Bold ${fontSize}px Inter, sans-serif`;
       ctx.fillStyle = color;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(text, width / 2, height / 2);
+
+      const lines = text.split('\n');
+      if (lines.length > 1) {
+        ctx.font = `Bold ${fontSize}px sans-serif`;
+        lines.forEach((line, i) => {
+          const yOffset = (height / 2) + ((i - (lines.length - 1) / 2) * (fontSize * 1.25));
+          ctx.fillText(line, width / 2, yOffset);
+        });
+      } else {
+        ctx.font = `Bold ${fontSize}px sans-serif`;
+        ctx.fillText(text, width / 2, height / 2);
+      }
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.minFilter = THREE.LinearFilter;
 
-      const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+      const spriteMaterial = new THREE.SpriteMaterial({ map: texture, depthTest: false });
       const sprite = new THREE.Sprite(spriteMaterial);
-      sprite.scale.set(width / 60, height / 60, 1);
+      sprite.scale.set(width / 35, height / 35, 1);
       return sprite;
     }
 
@@ -405,13 +386,13 @@
 
         filtered.forEach(item => {
           const card = document.createElement('div');
-          card.className = 'p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between items-center hover:border-sky-500/40 transition';
+          card.className = 'p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex justify-between items-center hover:border-sky-500/40 transition';
           card.innerHTML = `
             <div>
-              <h4 class="font-semibold text-white text-sm">${item.name}</h4>
-              <p class="text-xs text-slate-400">${item.desc}</p>
+              <h4 class="font-semibold text-white text-xs md:text-sm">${item.name}</h4>
+              <p class="text-[11px] text-slate-400">${item.desc}</p>
             </div>
-            <span class="text-xs font-bold px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">${item.distance}</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">${item.distance}</span>
           `;
           container.appendChild(card);
         });
@@ -428,143 +409,269 @@
       render('all');
     }
 
-    // ==========================================
-    // BUILD LOT 1704 SPECIFIC 3D SITE PLAN
-    // ==========================================
+    // Dynamic Legend Updater
+    function updateLegendUI(key) {
+      const legendBox = document.getElementById('dynamic-legend');
+      const refTag = document.getElementById('plan-reference-tag');
+      if (!legendBox) return;
+
+      if (key === 'opt1') {
+        legendBox.innerHTML = `
+          <div class="font-bold text-slate-200 border-b border-slate-800 pb-1">Lot 1704 Plan Legend</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> West Plots 1–4 (360–488 m²)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-sky-500 inline-block"></span> East Plots 5–11 (127–149 m²)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-slate-700 inline-block"></span> Lorong Belakang (6.096m Alley)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> 8 Parking Bays</div>
+        `;
+        if (refTag) refTag.textContent = "Modeled based on approved Lot 1704 plan map";
+      } else {
+        legendBox.innerHTML = `
+          <div class="font-bold text-slate-200 border-b border-slate-800 pb-1">Lot 449 (PA68736) Plan Legend</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-sky-500 inline-block"></span> Plots 1–14 (163.15–245.63 m²)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-slate-700 inline-block"></span> Lorong Belakang & Sisi (6.096m Lanes)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Kawasan Lapang (Plots 15 & 16)</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-amber-500 inline-block"></span> Simpanan / Cadangan Jalan 12.192m</div>
+        `;
+        if (refTag) refTag.textContent = "Modeled strictly according to approved survey plan PA68736";
+      }
+    }
+
+    // =========================================================
+    // LOT 1704 3D SITE PLAN
+    // =========================================================
     function createLot1704SitePlan() {
       const lotGroup = new THREE.Group();
 
-      // 1. Outer Perimeter Ground Surface (Matching irregular site plan shape with chamfered top corner)
       const shape = new THREE.Shape();
-      shape.moveTo(-32, -26);   // Bottom-Left
-      shape.lineTo(32, -26);    // Bottom-Right
-      shape.lineTo(32, 12);     // Right edge (Tempat Letak Kereta start)
-      shape.lineTo(16, 26);     // Top-Right Chamfered Angle (Simpanan Jalan Susur)
-      shape.lineTo(-20, 26);    // Top-Left edge
-      shape.lineTo(-32, 16);    // Top-Left Chamfer
-      shape.lineTo(-32, -26);   // Close shape
+      shape.moveTo(-48, -36);
+      shape.lineTo(48, -36);
+      shape.lineTo(48, 18);
+      shape.lineTo(32, 36);
+      shape.lineTo(-32, 36);
+      shape.lineTo(-48, 18);
+      shape.closePath();
 
       const extrudeSettings = { depth: 0.8, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.2, bevelThickness: 0.2 };
       const groundGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-      const groundMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.8 });
+      const groundMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.8 });
       const groundMesh = new THREE.Mesh(groundGeo, groundMat);
       groundMesh.rotation.x = -Math.PI / 2;
       lotGroup.add(groundMesh);
 
-      // Outer Road Reserve Boundary Lines
-      const edges = new THREE.EdgesGeometry(groundGeo);
-      const lineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, linewidth: 2 });
-      const wireframe = new THREE.LineSegments(edges, lineMat);
+      const wireframe = new THREE.LineSegments(new THREE.EdgesGeometry(groundGeo), new THREE.LineBasicMaterial({ color: 0x38bdf8, linewidth: 2 }));
       wireframe.rotation.x = -Math.PI / 2;
       wireframe.position.y = 0.85;
       lotGroup.add(wireframe);
 
-      // 2. Lorong Belakang (Central 6.096m Service Alley)
-      const alleyGeo = new THREE.PlaneGeometry(6.1, 51);
-      const alleyMat = new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.9 });
-      const alley = new THREE.Mesh(alleyGeo, alleyMat);
+      const alley = new THREE.Mesh(new THREE.PlaneGeometry(5.5, 58), new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.9 }));
       alley.rotation.x = -Math.PI / 2;
-      alley.position.set(-2, 0.82, 0);
+      alley.position.set(-6, 0.82, 0);
       lotGroup.add(alley);
 
-      // Alley Title Label
-      const alleyLabel = create3DLabel('LORONG BELAKANG 6.096m', 600, 120, 26, '#cbd5e1', 'rgba(30, 41, 59, 0.9)');
-      alleyLabel.position.set(-2, 3, 0);
-      alleyLabel.rotation.y = Math.PI / 2;
-      lotGroup.add(alleyLabel);
-
-      // 3. West Sub-Lots (Units 1 - 4: 360m² - 488m²)
       const westLots = [
-        { id: '1', area: '360 m²', depth: 12.5, z: 18, color: 0xf59e0b },
-        { id: '2', area: '360 m²', depth: 12.5, z: 5.5, color: 0xd97706 },
-        { id: '3', area: '412 m²', depth: 12.5, z: -7, color: 0xb45309 },
-        { id: '4', area: '488 m²', depth: 12.5, z: -19.5, color: 0x92400e }
+        { id: '1', area: '360 m²', z: 21, color: 0xf59e0b },
+        { id: '2', area: '360 m²', z: 7, color: 0xd97706 },
+        { id: '3', area: '412 m²', z: -7, color: 0xb45309 },
+        { id: '4', area: '488 m²', z: -21, color: 0x92400e }
       ];
 
       westLots.forEach(plot => {
-        const pGeo = new THREE.BoxGeometry(24, 2.5, plot.depth);
-        const pMat = new THREE.MeshStandardMaterial({ color: plot.color, roughness: 0.4, metalness: 0.1 });
-        const pMesh = new THREE.Mesh(pGeo, pMat);
-        pMesh.position.set(-17, 2, plot.z);
+        const pGeo = new THREE.BoxGeometry(24, 2.2, 13);
+        const pMesh = new THREE.Mesh(pGeo, new THREE.MeshStandardMaterial({ color: plot.color, roughness: 0.4 }));
+        pMesh.position.set(-21.5, 1.9, plot.z);
         lotGroup.add(pMesh);
+        pMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(pGeo), new THREE.LineBasicMaterial({ color: 0xffffff })));
 
-        // White Lot Outline
-        const pEdges = new THREE.EdgesGeometry(pGeo);
-        const pWire = new THREE.LineSegments(pEdges, new THREE.LineBasicMaterial({ color: 0xffffff }));
-        pMesh.add(pWire);
-
-        // Text Label
-        const lbl = create3DLabel(`Plot ${plot.id} • ${plot.area}`, 500, 140, 32, '#ffffff', 'rgba(15,23,42,0.8)');
-        lbl.position.set(-17, 4.5, plot.z);
+        const lbl = create3DLabel(`Plot ${plot.id} • ${plot.area}`, 500, 160, 32, '#ffffff', 'rgba(15,23,42,0.85)');
+        lbl.position.set(-21.5, 4.2, plot.z);
         lotGroup.add(lbl);
       });
 
-      // 4. East Sub-Lots (Units 5 - 11: 127m² - 149m²)
       const eastLots = [
-        { id: '5', area: '142.97 m²', z: 21 },
-        { id: '6', area: '129.15 m²', z: 14 },
-        { id: '7', area: '128.81 m²', z: 7 },
+        { id: '5', area: '142.97 m²', z: 22.8 },
+        { id: '6', area: '129.15 m²', z: 15.2 },
+        { id: '7', area: '128.81 m²', z: 7.6 },
         { id: '8', area: '128.47 m²', z: 0 },
-        { id: '9', area: '128.13 m²', z: -7 },
-        { id: '10', area: '127.79 m²', z: -14 },
-        { id: '11', area: '149.89 m²', z: -21 }
+        { id: '9', area: '128.13 m²', z: -7.6 },
+        { id: '10', area: '127.79 m²', z: -15.2 },
+        { id: '11', area: '149.89 m²', z: -22.8 }
       ];
 
       eastLots.forEach(plot => {
-        const pGeo = new THREE.BoxGeometry(22, 1.8, 6.2);
-        const pMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.4 });
-        const pMesh = new THREE.Mesh(pGeo, pMat);
-        pMesh.position.set(13, 1.6, plot.z);
+        const pGeo = new THREE.BoxGeometry(18.5, 1.8, 7.0);
+        const pMesh = new THREE.Mesh(pGeo, new THREE.MeshStandardMaterial({ color: 0x0284c7, roughness: 0.4 }));
+        pMesh.position.set(7.5, 1.7, plot.z);
         lotGroup.add(pMesh);
+        pMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(pGeo), new THREE.LineBasicMaterial({ color: 0xbae6fd })));
 
-        const pEdges = new THREE.EdgesGeometry(pGeo);
-        const pWire = new THREE.LineSegments(pEdges, new THREE.LineBasicMaterial({ color: 0xbae6fd }));
-        pMesh.add(pWire);
-
-        const lbl = create3DLabel(`Plot ${plot.id} (${plot.area})`, 450, 120, 26, '#e0f2fe', 'rgba(12, 74, 110, 0.85)');
-        lbl.position.set(13, 3.5, plot.z);
+        const lbl = create3DLabel(`Plot ${plot.id} (${plot.area})`, 480, 140, 28, '#e0f2fe', 'rgba(12, 74, 110, 0.85)');
+        lbl.position.set(7.5, 3.4, plot.z);
         lotGroup.add(lbl);
       });
 
-      // 5. Tempat Letak Kereta (Parking Zone at Top-Right Corner)
-      const parkGeo = new THREE.BoxGeometry(12, 1.0, 10);
-      const parkMat = new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.5 });
-      const parkMesh = new THREE.Mesh(parkGeo, parkMat);
-      parkMesh.position.set(24, 1.2, -20);
-      lotGroup.add(parkMesh);
+      for (let i = 0; i < 8; i++) {
+        const curZ = 22.75 - (i * 6.5);
+        const bayGeo = new THREE.BoxGeometry(11.5, 0.4, 5.2);
+        const bayMesh = new THREE.Mesh(bayGeo, new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.5 }));
+        bayMesh.position.set(25.5, 1.0, curZ);
+        lotGroup.add(bayMesh);
+        bayMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(bayGeo), new THREE.LineBasicMaterial({ color: 0xffffff })));
+      }
 
-      const parkLbl = create3DLabel('TEMPAT LETAK KERETA', 500, 130, 26, '#ecfdf5', 'rgba(6, 78, 59, 0.9)');
-      parkLbl.position.set(24, 3, -20);
-      lotGroup.add(parkLbl);
-
-      // Main Property Banner
-      const mainBanner = create3DLabel('LOT 1704 • TOTAL 3,335 m²', 800, 180, 38, '#ffffff', 'rgba(2, 132, 199, 0.95)');
-      mainBanner.position.set(0, 10, 0);
+      const mainBanner = create3DLabel('LOT 1704 • TOTAL AREA 3,335 m²', 850, 180, 38, '#ffffff', 'rgba(2, 132, 199, 0.95)');
+      mainBanner.position.set(0, 14, 0);
       lotGroup.add(mainBanner);
 
       return lotGroup;
     }
 
-    // Generic Lot 449 Placeholder Model
+    // =========================================================
+    // LOT 449 3D SITE PLAN (ACCURATE TO SURVEY PLAN PA68736)
+    // =========================================================
     function createLot449SitePlan() {
-      const group = new THREE.Group();
-      const geo = new THREE.BoxGeometry(45, 1.5, 60);
-      const mat = new THREE.MeshStandardMaterial({ color: 0x059669, roughness: 0.5 });
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.y = 0.75;
-      group.add(mesh);
+      const lotGroup = new THREE.Group();
 
-      const wire = new THREE.LineSegments(new THREE.EdgesGeometry(geo), new THREE.LineBasicMaterial({ color: 0xa7f3d0 }));
-      mesh.add(wire);
+      // 1. Precise Outer Boundary Polygon of Lot 449 (PA68736)
+      // Encloses Simpanan Jalan (top), Lorong Sisi (left), Plots 1–14 (center),
+      // Cadangan Jalan (right), and Kawasan Lapang open spaces 15 & 16 (bottom).
+      const shape = new THREE.Shape();
+      shape.moveTo(-54, -26);    // Top-Left Corner (Simpanan Jalan / Lorong Sisi)
+      shape.lineTo(54, -26);     // Top-Right Corner (Simpanan Jalan / Cadangan Jalan)
+      shape.lineTo(54, 20);      // Bottom-Right Corner (Cadangan Jalan / Plot 15)
+      shape.lineTo(32, 28);      // Bottom Slope Right (Kawasan Lapang 15 boundary)
+      shape.lineTo(-18, 29);     // Bottom Slope Middle (Gov Alley Reserve)
+      shape.lineTo(-54, 20);     // Bottom-Left Corner (Kawasan Lapang 16 / Lorong Sisi)
+      shape.closePath();
 
-      const mainBanner = create3DLabel('LOT 449 • TOTAL 3,672 m²', 800, 180, 38, '#ffffff', 'rgba(5, 150, 105, 0.95)');
-      mainBanner.position.set(0, 8, 0);
-      group.add(mainBanner);
+      const extrudeSettings = { depth: 0.6, bevelEnabled: true, bevelSegments: 2, steps: 1, bevelSize: 0.2, bevelThickness: 0.2 };
+      const groundGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+      const groundMesh = new THREE.Mesh(groundGeo, new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.8 }));
+      groundMesh.rotation.x = -Math.PI / 2;
+      lotGroup.add(groundMesh);
 
-      return group;
+      // Glowing Outer Perimeter Line
+      const wireframe = new THREE.LineSegments(new THREE.EdgesGeometry(groundGeo), new THREE.LineBasicMaterial({ color: 0x10b981, linewidth: 2 }));
+      wireframe.rotation.x = -Math.PI / 2;
+      wireframe.position.y = 0.65;
+      lotGroup.add(wireframe);
+
+      // 2. SIMPANAN JALAN 12.192 METER (Top Frontage Road facing Taman Selasih)
+      const roadMesh = new THREE.Mesh(new THREE.PlaneGeometry(108, 6), new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.9 }));
+      roadMesh.rotation.x = -Math.PI / 2;
+      roadMesh.position.set(0, 0.62, -22);
+      lotGroup.add(roadMesh);
+
+      const roadLbl = create3DLabel('SIMPANAN JALAN 12.192 METER (TAMAN SELASIH)', 900, 120, 26, '#e2e8f0', 'rgba(30, 41, 59, 0.9)');
+      roadLbl.position.set(0, 2.5, -22);
+      lotGroup.add(roadLbl);
+
+      // 3. PLOTS 14 TO 1 (Horizontal Row, Left to Right)
+      const plotsData = [
+        { id: '14', area: '245.63 m²', x: -41.0, width: 8.8, color: 0x0284c7 },
+        { id: '13', area: '163.15 m²', x: -33.8, width: 5.8, color: 0x0369a1 },
+        { id: '12', area: '163.15 m²', x: -28.0, width: 5.8, color: 0x0284c7 },
+        { id: '11', area: '163.15 m²', x: -22.2, width: 5.8, color: 0x0369a1 },
+        { id: '10', area: '163.15 m²', x: -16.4, width: 5.8, color: 0x0284c7 },
+        { id: '9',  area: '163.15 m²', x: -10.6, width: 5.8, color: 0x0369a1 },
+        { id: '8',  area: '163.15 m²', x: -4.8,  width: 5.8, color: 0x0284c7 },
+        { id: '7',  area: '163.15 m²', x: 1.0,   width: 5.8, color: 0x0369a1 },
+        { id: '6',  area: '163.15 m²', x: 6.8,   width: 5.8, color: 0x0284c7 },
+        { id: '5',  area: '163.15 m²', x: 12.6,  width: 5.8, color: 0x0369a1 },
+        { id: '4',  area: '163.15 m²', x: 18.4,  width: 5.8, color: 0x0284c7 },
+        { id: '3',  area: '163.15 m²', x: 24.2,  width: 5.8, color: 0x0369a1 },
+        { id: '2',  area: '163.15 m²', x: 30.0,  width: 5.8, color: 0x0284c7 },
+        { id: '1',  area: '213.07 m²', x: 36.8,  width: 7.6, color: 0x0369a1 }
+      ];
+
+      plotsData.forEach(plot => {
+        const pGeo = new THREE.BoxGeometry(plot.width - 0.2, 1.2, 17);
+        const pMesh = new THREE.Mesh(pGeo, new THREE.MeshStandardMaterial({ color: plot.color, roughness: 0.4 }));
+        pMesh.position.set(plot.x, 1.2, -8);
+        lotGroup.add(pMesh);
+        pMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(pGeo), new THREE.LineBasicMaterial({ color: 0xbae6fd })));
+
+        const lbl = create3DLabel(`${plot.id}\n${plot.area}`, 240, 180, 32, '#ffffff', 'rgba(12, 74, 110, 0.85)');
+        lbl.position.set(plot.x, 2.6, -8);
+        lbl.scale.set(1.5, 1.5, 1);
+        lotGroup.add(lbl);
+      });
+
+      // 4. LORONG BELAKANG 6.096 METER (Rear Alley directly behind Plots 1–14)
+      const rearAlley = new THREE.Mesh(new THREE.PlaneGeometry(90, 4), new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.9 }));
+      rearAlley.rotation.x = -Math.PI / 2;
+      rearAlley.position.set(-2, 0.62, 2.5);
+      lotGroup.add(rearAlley);
+
+      const rearAlleyLbl = create3DLabel('LORONG BELAKANG 6.096 METER', 750, 110, 24, '#f1f5f9', 'rgba(30, 41, 59, 0.9)');
+      rearAlleyLbl.position.set(-2, 2.2, 2.5);
+      lotGroup.add(rearAlleyLbl);
+
+      // 5. LORONG SISI 6.096 METER (Side Alley along left edge of Plot 14)
+      const sideAlley = new THREE.Mesh(new THREE.PlaneGeometry(4.5, 42), new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.9 }));
+      sideAlley.rotation.x = -Math.PI / 2;
+      sideAlley.position.set(-48, 0.62, -3);
+      lotGroup.add(sideAlley);
+
+      const sideAlleyLbl = create3DLabel('LORONG SISI 6.096m', 550, 110, 22, '#f1f5f9', 'rgba(30, 41, 59, 0.9)');
+      sideAlleyLbl.position.set(-48, 2.2, -3);
+      sideAlleyLbl.rotation.y = Math.PI / 2;
+      lotGroup.add(sideAlleyLbl);
+
+      // 6. CADANGAN JALAN 12.192 METER (Proposed Road along right side)
+      const cadanganMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.5, 44), new THREE.MeshStandardMaterial({ color: 0xb45309, roughness: 0.8 }));
+      cadanganMesh.rotation.x = -Math.PI / 2;
+      cadanganMesh.position.set(47.5, 0.62, -1);
+      lotGroup.add(cadanganMesh);
+
+      const cadanganLbl = create3DLabel('CADANGAN JALAN 12.192m', 550, 120, 22, '#fef3c7', 'rgba(180, 83, 9, 0.9)');
+      cadanganLbl.position.set(47.5, 2.2, -1);
+      cadanganLbl.rotation.y = -Math.PI / 2;
+      lotGroup.add(cadanganLbl);
+
+      // 7. KAWASAN LAPANG OPEN SPACES AT BOTTOM (BELOW LORONG BELAKANG)
+      // Plot 16: Kawasan Lapang 146.36 m² (Bottom Left)
+      const lapang16Geo = new THREE.BoxGeometry(24, 1.0, 11);
+      const lapangMat = new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.5 });
+      const lapang16Mesh = new THREE.Mesh(lapang16Geo, lapangMat);
+      lapang16Mesh.position.set(-30, 1.1, 12.5);
+      lotGroup.add(lapang16Mesh);
+      lapang16Mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(lapang16Geo), new THREE.LineBasicMaterial({ color: 0xa7f3d0 })));
+
+      const lapang16Lbl = create3DLabel('Plot 16 • KAWASAN LAPANG\n146.36 m²', 650, 140, 24, '#ffffff', 'rgba(6, 78, 59, 0.9)');
+      lapang16Lbl.position.set(-30, 2.5, 12.5);
+      lotGroup.add(lapang16Lbl);
+
+      // Government Alley Reserve Strip (164.15 m²)
+      const govGeo = new THREE.BoxGeometry(28, 0.8, 11);
+      const govMesh = new THREE.Mesh(govGeo, new THREE.MeshStandardMaterial({ color: 0x059669, roughness: 0.6, transparent: true, opacity: 0.85 }));
+      govMesh.position.set(-3, 1.0, 12.5);
+      lotGroup.add(govMesh);
+      govMesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(govGeo), new THREE.LineBasicMaterial({ color: 0x6ee7b7 })));
+
+      const govLbl = create3DLabel('MEMOHON TANAH KERAJAAN\n(164.15 m²)', 650, 140, 22, '#d1fae5', 'rgba(6, 78, 59, 0.9)');
+      govLbl.position.set(-3, 2.3, 12.5);
+      lotGroup.add(govLbl);
+
+      // Plot 15: Kawasan Lapang 34.28 m² (Bottom Right)
+      const lapang15Geo = new THREE.BoxGeometry(16, 1.0, 11);
+      const lapang15Mesh = new THREE.Mesh(lapang15Geo, lapangMat);
+      lapang15Mesh.position.set(28, 1.1, 12.5);
+      lotGroup.add(lapang15Mesh);
+      lapang15Mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(lapang15Geo), new THREE.LineBasicMaterial({ color: 0xa7f3d0 })));
+
+      const lapang15Lbl = create3DLabel('Plot 15 • KAWASAN LAPANG\n34.28 m²', 600, 140, 22, '#ffffff', 'rgba(6, 78, 59, 0.9)');
+      lapang15Lbl.position.set(28, 2.5, 12.5);
+      lotGroup.add(lapang15Lbl);
+
+      // Main Lot Title Banner
+      const mainBanner = create3DLabel('LOT 449 (PA68736) • TOTAL AREA 3,672 m²', 900, 180, 38, '#ffffff', 'rgba(16, 185, 129, 0.95)');
+      mainBanner.position.set(0, 12, -8);
+      lotGroup.add(mainBanner);
+
+      return lotGroup;
     }
 
-    // Three.js 3D Viewer Setup with OrbitControls
+    // Three.js 3D Viewer Setup
     function init3DViewer() {
       const container = document.getElementById('canvas-container');
       if (!container || typeof THREE === 'undefined') return;
@@ -584,7 +691,6 @@
         threeControls.maxPolarAngle = Math.PI / 2 - 0.05;
       }
 
-      // Lighting
       const ambient = new THREE.AmbientLight(0xffffff, 0.85);
       threeScene.add(ambient);
 
@@ -592,11 +698,6 @@
       dirLight.position.set(40, 60, 30);
       threeScene.add(dirLight);
 
-      // Camera Angle
-      threeCamera.position.set(0, 65, 75);
-      threeCamera.lookAt(0, 0, 0);
-
-      // Render Current Selection
       update3DModel();
 
       function animate() {
@@ -623,8 +724,15 @@
 
       if (activeOptionKey === 'opt1') {
         currentLot3DGroup = createLot1704SitePlan();
+        if (threeCamera) threeCamera.position.set(0, 75, 65);
       } else {
         currentLot3DGroup = createLot449SitePlan();
+        if (threeCamera) threeCamera.position.set(0, 80, 60);
+      }
+
+      if (threeControls) {
+        threeControls.target.set(0, 0, 0);
+        threeControls.update();
       }
 
       threeScene.add(currentLot3DGroup);
@@ -651,13 +759,14 @@
         document.getElementById('whatsapp-link').href = `https://wa.me/60123456789?text=Hi,%20I%20am%20interested%20in%20${encodeURIComponent(current.title)}`;
 
         if (key === 'opt1') {
-          opt1Btn.className = 'option-toggle px-6 py-3 rounded-xl bg-sky-600 text-white font-semibold shadow-lg shadow-sky-600/20 border border-sky-500 transition-all flex items-center gap-2';
-          opt2Btn.className = 'option-toggle px-6 py-3 rounded-xl bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2';
+          opt1Btn.className = 'option-toggle px-5 py-2.5 rounded-xl bg-sky-600 text-white font-semibold text-sm shadow-lg shadow-sky-600/20 border border-sky-500 transition-all flex items-center gap-2';
+          opt2Btn.className = 'option-toggle px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-semibold text-sm hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2';
         } else {
-          opt2Btn.className = 'option-toggle px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold shadow-lg shadow-emerald-600/20 border border-emerald-500 transition-all flex items-center gap-2';
-          opt1Btn.className = 'option-toggle px-6 py-3 rounded-xl bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2';
+          opt2Btn.className = 'option-toggle px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-sm shadow-lg shadow-emerald-600/20 border border-emerald-500 transition-all flex items-center gap-2';
+          opt1Btn.className = 'option-toggle px-5 py-2.5 rounded-xl bg-slate-800 text-slate-300 font-semibold text-sm hover:bg-slate-700 border border-slate-700 transition-all flex items-center gap-2';
         }
 
+        updateLegendUI(key);
         updateMapPosition();
         update3DModel();
         if (window.renderFacilities) window.renderFacilities('all');
@@ -674,12 +783,12 @@
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-      } catch (e) { console.error('Menu error:', e); }
+      } catch (e) { console.error(e); }
 
-      try { initMap(); } catch (e) { console.error('Map error:', e); }
-      try { initFacilities(); } catch (e) { console.error('Facilities error:', e); }
-      try { init3DViewer(); } catch (e) { console.error('3D error:', e); }
-      try { setupOptionToggles(); } catch (e) { console.error('Toggles error:', e); }
+      try { initMap(); } catch (e) { console.error(e); }
+      try { initFacilities(); } catch (e) { console.error(e); }
+      try { init3DViewer(); } catch (e) { console.error(e); }
+      try { setupOptionToggles(); } catch (e) { console.error(e); }
     });
   </script>
 </body>
